@@ -54,7 +54,7 @@
             // 
             // btnCodTurma
             // 
-            this.btnCodTurma.Location = new System.Drawing.Point(39, 84);
+            this.btnCodTurma.Location = new System.Drawing.Point(39, 87);
             this.btnCodTurma.Name = "btnCodTurma";
             this.btnCodTurma.Size = new System.Drawing.Size(96, 23);
             this.btnCodTurma.TabIndex = 26;
@@ -64,7 +64,7 @@
             // 
             // btbSaveTurma
             // 
-            this.btbSaveTurma.Location = new System.Drawing.Point(281, 259);
+            this.btbSaveTurma.Location = new System.Drawing.Point(293, 218);
             this.btbSaveTurma.Name = "btbSaveTurma";
             this.btbSaveTurma.Size = new System.Drawing.Size(75, 23);
             this.btbSaveTurma.TabIndex = 24;
@@ -85,7 +85,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(251, 142);
+            this.label4.Location = new System.Drawing.Point(265, 142);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 13);
             this.label4.TabIndex = 22;
@@ -94,7 +94,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 133);
+            this.label3.Location = new System.Drawing.Point(36, 142);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 13);
             this.label3.TabIndex = 21;
@@ -103,7 +103,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(251, 67);
+            this.label2.Location = new System.Drawing.Point(265, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 20;
@@ -112,7 +112,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 67);
+            this.label1.Location = new System.Drawing.Point(36, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 13);
             this.label1.TabIndex = 19;
@@ -129,14 +129,14 @@
             // 
             // txtHorarioTurma
             // 
-            this.txtHorarioTurma.Location = new System.Drawing.Point(254, 90);
+            this.txtHorarioTurma.Location = new System.Drawing.Point(268, 86);
             this.txtHorarioTurma.Name = "txtHorarioTurma";
             this.txtHorarioTurma.Size = new System.Drawing.Size(100, 20);
             this.txtHorarioTurma.TabIndex = 30;
             // 
             // txtTipoTurma
             // 
-            this.txtTipoTurma.Location = new System.Drawing.Point(254, 161);
+            this.txtTipoTurma.Location = new System.Drawing.Point(268, 161);
             this.txtTipoTurma.Name = "txtTipoTurma";
             this.txtTipoTurma.Size = new System.Drawing.Size(100, 20);
             this.txtTipoTurma.TabIndex = 31;
@@ -145,7 +145,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 318);
+            this.ClientSize = new System.Drawing.Size(425, 274);
             this.Controls.Add(this.txtTipoTurma);
             this.Controls.Add(this.txtHorarioTurma);
             this.Controls.Add(this.cbxDiasAula);
@@ -157,6 +157,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CadastroTurmas";
             this.Text = "CadastroTurmas";
             this.Load += new System.EventHandler(this.CadastroTurmas_Load);

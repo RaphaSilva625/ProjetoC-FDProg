@@ -21,10 +21,12 @@ C:\Users\rapha\Desenvolvimento\Projetos\MeusProjetos\ProjetoFDProg\Projeto3.0\Pr
 C:\Users\rapha\Desenvolvimento\Projetos\MeusProjetos\ProjetoFDProg\Projeto3.0\Projeto3.0\bin\Debug\Projeto3.0.exe
 C:\Users\rapha\Desenvolvimento\Projetos\MeusProjetos\ProjetoFDProg\Projeto3.0\Projeto3.0\bin\Debug\Projeto3.0.pdb
 C:\Users\rapha\Desenvolvimento\Projetos\MeusProjetos\ProjetoFDProg\Projeto3.0\Projeto3.0\obj\Debug\Projeto3.0.csprojAssemblyReference.cache
-C:\Users\rapha\Desenvolvimento\Projetos\MeusProjetos\ProjetoFDProg\Projeto3.0\Projeto3.0\obj\Debug\Projeto3._0.formLogin.resources
 C:\Users\rapha\Desenvolvimento\Projetos\MeusProjetos\ProjetoFDProg\Projeto3.0\Projeto3.0\obj\Debug\Projeto3._0.Properties.Resources.resources
 C:\Users\rapha\Desenvolvimento\Projetos\MeusProjetos\ProjetoFDProg\Projeto3.0\Projeto3.0\obj\Debug\Projeto3.0.csproj.GenerateResource.cache
 C:\Users\rapha\Desenvolvimento\Projetos\MeusProjetos\ProjetoFDProg\Projeto3.0\Projeto3.0\obj\Debug\Projeto3.0.csproj.CoreCompileInputs.cache
 C:\Users\rapha\Desenvolvimento\Projetos\MeusProjetos\ProjetoFDProg\Projeto3.0\Projeto3.0\obj\Debug\Projeto3.0.exe
 C:\Users\rapha\Desenvolvimento\Projetos\MeusProjetos\ProjetoFDProg\Projeto3.0\Projeto3.0\obj\Debug\Projeto3.0.pdb
 C:\Users\rapha\Desenvolvimento\Projetos\MeusProjetos\ProjetoFDProg\Projeto3.0\Projeto3.0\obj\Debug\Projeto3._0.CadastroTurmas.resources
+C:\Users\rapha\Desenvolvimento\Projetos\MeusProjetos\ProjetoFDProg\Projeto3.0\Projeto3.0\obj\Debug\Projeto3._0.CadastroProfessores.resources
+C:\Users\rapha\Desenvolvimento\Projetos\MeusProjetos\ProjetoFDProg\Projeto3.0\Projeto3.0\obj\Debug\Projeto3._0.TelaLogin.resources
+C:\Users\rapha\Desenvolvimento\Projetos\MeusProjetos\ProjetoFDProg\Projeto3.0\Projeto3.0\obj\Debug\Projeto3._0.formTurmas.resources

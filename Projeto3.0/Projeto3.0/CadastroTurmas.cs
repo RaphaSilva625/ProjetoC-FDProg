@@ -48,13 +48,8 @@ namespace Projeto3._0
             string novoHorario = txtHorarioTurma.Text;
             string novoDia = Convert.ToString(cbxDiasAula.SelectedItem);
 
-            BancoAcademia.LerArquivo(ListaCodigoTurma, ListaTipoTurma, ListaHorarioTurma, ListaDiasTurma);
-            BancoAcademia.NovaTurma(ListaCodigoTurma, ListaTipoTurma, ListaHorarioTurma, ListaDiasTurma, novoCodigo, novoTipo, novoHorario, novoDia);
-            //BancoAcademia.ListaCodigoTurma.Add(lblCodTurma.Text);
-            //BancoAcademia.ListaTipoTurma.Add(txtTipoTurma.Text);
-            //BancoAcademia.ListaHorarioTurma.Add(txtHorarioTurma.Text);
-            //BancoAcademia.ListaDiasTurma.Add(cbxDiasAula.Text);
-            //BancoAcademia.GravarArquivo();
+            BancoAcademia.LerArquivoTurma(ListaCodigoTurma, ListaTipoTurma, ListaHorarioTurma, ListaDiasTurma);
+            BancoAcademia.NovaTurma(ListaCodigoTurma, ListaTipoTurma, ListaHorarioTurma, ListaDiasTurma, novoCodigo, novoTipo, novoHorario, novoDia);           
         }
 
         private void BtnCodTurma_Click(object sender, EventArgs e)

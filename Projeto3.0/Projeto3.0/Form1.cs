@@ -14,7 +14,7 @@ using System.Collections;
 namespace Projeto3._0
 {
     
-    public partial class formLogin : Form
+    public partial class formTurmas : Form
     {
         public static ArrayList ListaCodigoTurma = new ArrayList();
         public static ArrayList TipoTurma = new ArrayList();
@@ -25,10 +25,9 @@ namespace Projeto3._0
         { 
         }
 
-        public formLogin()
+        public formTurmas()
         {
-            InitializeComponent();
-            BancoAcademia.LerArquivo(ListaCodigoTurma, TipoTurma, HorarioTurma, DiasTurma);
+            InitializeComponent();         
             listView1.Columns.Add("Codigo", 50);
             listView1.Columns.Add("Turma", 125);
             listView1.Columns.Add("Horario", 100);
@@ -42,7 +41,7 @@ namespace Projeto3._0
 
         private void btnListarTurmas_Click(object sender, EventArgs e)
         {
-           
+            BancoAcademia.LerArquivoTurma(ListaCodigoTurma, TipoTurma, HorarioTurma, DiasTurma);
             listView1.Items.Clear();
             string[] vetorDeTeste = new string[4];
             ListViewItem itm;
