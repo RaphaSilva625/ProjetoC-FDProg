@@ -28,43 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNovoNome = new System.Windows.Forms.TextBox();
+            this.txtNovoSobrenome = new System.Windows.Forms.TextBox();
             this.lblNomeProf = new System.Windows.Forms.Label();
             this.lblSobrenomeProf = new System.Windows.Forms.Label();
             this.lblTelefoneProf = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtNovoTelefone = new System.Windows.Forms.MaskedTextBox();
             this.lblCPFProf = new System.Windows.Forms.Label();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtNovoCpf = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.txtNovoRg = new System.Windows.Forms.TextBox();
+            this.mtxtNovoData = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbxGeneroProf = new System.Windows.Forms.ComboBox();
             this.lblGeneroProf = new System.Windows.Forms.Label();
             this.btnSalvarProf = new System.Windows.Forms.Button();
             this.btnCancelarProf = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtNovaSenha = new System.Windows.Forms.TextBox();
             this.lblSenhaProf = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtNovoNome
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtNovoNome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(40, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtNovoNome.Location = new System.Drawing.Point(40, 54);
+            this.txtNovoNome.Name = "txtNovoNome";
+            this.txtNovoNome.Size = new System.Drawing.Size(100, 20);
+            this.txtNovoNome.TabIndex = 0;
             // 
-            // textBox2
+            // txtNovoSobrenome
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtNovoSobrenome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(183, 54);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
+            this.txtNovoSobrenome.Location = new System.Drawing.Point(183, 54);
+            this.txtNovoSobrenome.Name = "txtNovoSobrenome";
+            this.txtNovoSobrenome.Size = new System.Drawing.Size(100, 20);
+            this.txtNovoSobrenome.TabIndex = 1;
             // 
             // lblNomeProf
             // 
@@ -93,15 +93,15 @@
             this.lblTelefoneProf.TabIndex = 10;
             this.lblTelefoneProf.Text = "Telefone";
             // 
-            // maskedTextBox1
+            // mtxtNovoTelefone
             // 
-            this.maskedTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.mtxtNovoTelefone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(183, 134);
-            this.maskedTextBox1.Mask = "(00)00000-0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 3;
+            this.mtxtNovoTelefone.Location = new System.Drawing.Point(183, 134);
+            this.mtxtNovoTelefone.Mask = "(00)00000-0000";
+            this.mtxtNovoTelefone.Name = "mtxtNovoTelefone";
+            this.mtxtNovoTelefone.Size = new System.Drawing.Size(100, 20);
+            this.mtxtNovoTelefone.TabIndex = 3;
             // 
             // lblCPFProf
             // 
@@ -112,13 +112,13 @@
             this.lblCPFProf.TabIndex = 12;
             this.lblCPFProf.Text = "CPF";
             // 
-            // maskedTextBox2
+            // mtxtNovoCpf
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(40, 214);
-            this.maskedTextBox2.Mask = "999.999.999-99";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox2.TabIndex = 4;
+            this.mtxtNovoCpf.Location = new System.Drawing.Point(40, 214);
+            this.mtxtNovoCpf.Mask = "999.999.999-99";
+            this.mtxtNovoCpf.Name = "mtxtNovoCpf";
+            this.mtxtNovoCpf.Size = new System.Drawing.Size(100, 20);
+            this.mtxtNovoCpf.TabIndex = 4;
             // 
             // label1
             // 
@@ -129,20 +129,20 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "RG";
             // 
-            // textBox3
+            // txtNovoRg
             // 
-            this.textBox3.Location = new System.Drawing.Point(183, 214);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 5;
+            this.txtNovoRg.Location = new System.Drawing.Point(183, 214);
+            this.txtNovoRg.Name = "txtNovoRg";
+            this.txtNovoRg.Size = new System.Drawing.Size(100, 20);
+            this.txtNovoRg.TabIndex = 5;
             // 
-            // maskedTextBox3
+            // mtxtNovoData
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(183, 291);
-            this.maskedTextBox3.Mask = "99/99/9999";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(71, 20);
-            this.maskedTextBox3.TabIndex = 7;
+            this.mtxtNovoData.Location = new System.Drawing.Point(183, 291);
+            this.mtxtNovoData.Mask = "99/99/9999";
+            this.mtxtNovoData.Name = "mtxtNovoData";
+            this.mtxtNovoData.Size = new System.Drawing.Size(71, 20);
+            this.mtxtNovoData.TabIndex = 7;
             // 
             // label2
             // 
@@ -160,6 +160,7 @@
             this.cbxGeneroProf.Name = "cbxGeneroProf";
             this.cbxGeneroProf.Size = new System.Drawing.Size(121, 21);
             this.cbxGeneroProf.TabIndex = 6;
+            this.cbxGeneroProf.Text = "[Selecione]";
             // 
             // lblGeneroProf
             // 
@@ -178,6 +179,7 @@
             this.btnSalvarProf.TabIndex = 8;
             this.btnSalvarProf.Text = "Salvar";
             this.btnSalvarProf.UseVisualStyleBackColor = true;
+            this.btnSalvarProf.Click += new System.EventHandler(this.BtnSalvarProf_Click);
             // 
             // btnCancelarProf
             // 
@@ -189,12 +191,12 @@
             this.btnCancelarProf.UseVisualStyleBackColor = true;
             this.btnCancelarProf.Click += new System.EventHandler(this.BtnCancelarProf_Click);
             // 
-            // textBox4
+            // txtNovaSenha
             // 
-            this.textBox4.Location = new System.Drawing.Point(40, 134);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 2;
+            this.txtNovaSenha.Location = new System.Drawing.Point(40, 134);
+            this.txtNovaSenha.Name = "txtNovaSenha";
+            this.txtNovaSenha.Size = new System.Drawing.Size(100, 20);
+            this.txtNovaSenha.TabIndex = 2;
             // 
             // lblSenhaProf
             // 
@@ -211,23 +213,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(325, 450);
             this.Controls.Add(this.lblSenhaProf);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtNovaSenha);
             this.Controls.Add(this.btnCancelarProf);
             this.Controls.Add(this.btnSalvarProf);
             this.Controls.Add(this.lblGeneroProf);
             this.Controls.Add(this.cbxGeneroProf);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.maskedTextBox3);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.mtxtNovoData);
+            this.Controls.Add(this.txtNovoRg);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.maskedTextBox2);
+            this.Controls.Add(this.mtxtNovoCpf);
             this.Controls.Add(this.lblCPFProf);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.mtxtNovoTelefone);
             this.Controls.Add(this.lblTelefoneProf);
             this.Controls.Add(this.lblSobrenomeProf);
             this.Controls.Add(this.lblNomeProf);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNovoSobrenome);
+            this.Controls.Add(this.txtNovoNome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CadastroProfessores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -240,23 +242,23 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNovoNome;
+        private System.Windows.Forms.TextBox txtNovoSobrenome;
         private System.Windows.Forms.Label lblNomeProf;
         private System.Windows.Forms.Label lblSobrenomeProf;
         private System.Windows.Forms.Label lblTelefoneProf;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox mtxtNovoTelefone;
         private System.Windows.Forms.Label lblCPFProf;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox mtxtNovoCpf;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.TextBox txtNovoRg;
+        private System.Windows.Forms.MaskedTextBox mtxtNovoData;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbxGeneroProf;
         private System.Windows.Forms.Label lblGeneroProf;
         private System.Windows.Forms.Button btnSalvarProf;
         private System.Windows.Forms.Button btnCancelarProf;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtNovaSenha;
         private System.Windows.Forms.Label lblSenhaProf;
     }
 }

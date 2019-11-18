@@ -43,12 +43,13 @@ namespace Projeto3._0
 
         private void BtbSaveTurma_Click(object sender, EventArgs e)
         {
+            BancoAcademia.LerArquivoTurma(ListaCodigoTurma, ListaTipoTurma, ListaHorarioTurma, ListaDiasTurma);
             string novoCodigo = lblCodTurma.Text;
             string novoTipo = txtTipoTurma.Text;
             string novoHorario = txtHorarioTurma.Text;
             string novoDia = Convert.ToString(cbxDiasAula.SelectedItem);
 
-            BancoAcademia.LerArquivoTurma(ListaCodigoTurma, ListaTipoTurma, ListaHorarioTurma, ListaDiasTurma);
+            //BancoAcademia.LerArquivoTurma(ListaCodigoTurma, ListaTipoTurma, ListaHorarioTurma, ListaDiasTurma);
             BancoAcademia.NovaTurma(ListaCodigoTurma, ListaTipoTurma, ListaHorarioTurma, ListaDiasTurma, novoCodigo, novoTipo, novoHorario, novoDia);           
         }
 

@@ -22,7 +22,8 @@ namespace Projeto3._0
         public static ArrayList DiasTurma = new ArrayList();
 
         private void formLogin_Load(object sender, EventArgs e)
-        { 
+        {
+            
         }
 
         public formTurmas()
@@ -42,6 +43,15 @@ namespace Projeto3._0
         private void btnListarTurmas_Click(object sender, EventArgs e)
         {
             BancoAcademia.LerArquivoTurma(ListaCodigoTurma, TipoTurma, HorarioTurma, DiasTurma);
+            if (ListaCodigoTurma.Count == 0)
+            {
+                DialogResult resposta;
+                resposta = MessageBox.Show("Não há turmas cadastradas, deseja criar uma turma nova?", "Erro", MessageBoxButtons.YesNo);
+                if (resposta == DialogResult.Yes)
+                {
+                    new CadastroTurmas().Show();
+                }
+            }
             listView1.Items.Clear();
             string[] vetorDeTeste = new string[4];
             ListViewItem itm;
@@ -62,5 +72,9 @@ namespace Projeto3._0
             cadastroTurmas.Show();
         }
 
+        private void CadastroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new CadastroProfessores().Show();
+        }
     }
 }

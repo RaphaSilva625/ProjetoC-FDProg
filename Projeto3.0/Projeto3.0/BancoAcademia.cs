@@ -9,10 +9,10 @@ using System.Windows.Forms;
 
 
 /*Metodos e funcoes utilizadas para criar, ler, editar e deletar dados.
- *Todos os metdos daqui sao utilizados em outros formularios, para melhor organizacao.
+ *Todos os metodos daqui sao utilizados em outros formularios, para melhor organizacão.
  *Os metodos, formularios, funcoes e tudo que sera utilizado, sera detalhado por meio de comentarios,
  *explicando o que foi usado, como foi usado e porque foi usado.
- *Feito, editado, organizado e pensado por Raphael Silva, como projeto final de segunda unidade da cadeira de Fundamentos da Prgramacao.
+ *Feito, editado, organizado e pensado por Raphael Silva, como projeto final de segunda unidade da cadeira de Fundamentos da Programacão.
  *Inicio do projeto data 11/11/2019 
  *Data de termino do projeto (...)
 */
@@ -25,6 +25,7 @@ namespace Projeto3._0
 
         public static void LerArquivoTurma(ArrayList codigo, ArrayList tipo, ArrayList horario, ArrayList dias)
         {
+            codigo.Clear();tipo.Clear();horario.Clear();dias.Clear();
             Stream diretorio = File.Open(@"E:\bdProjeto\bdTurmas.txt", FileMode.Open);
             StreamReader lerArquivo = new StreamReader(diretorio);
             string linha = lerArquivo.ReadLine();
@@ -41,9 +42,11 @@ namespace Projeto3._0
             lerArquivo.Close();
             diretorio.Close();
         }
-        public static void LerArquivoProf(ArrayList nome, ArrayList sobrenome, ArrayList telefone, ArrayList nascimento, ArrayList rg,
+        public static void LerArquivoProf(ArrayList nome, ArrayList sobrenome, ArrayList senha, ArrayList telefone, ArrayList nascimento, ArrayList rg,
            ArrayList cpf, ArrayList genero)
         {
+            nome.Clear();sobrenome.Clear();senha.Clear();telefone.Clear();cpf.Clear();rg.Clear();genero.Clear();nascimento.Clear();
+            
             Stream diretorio = File.Open(@"E:\bdProjeto\bdProfessores.txt", FileMode.Open);
             StreamReader lerArquivo = new StreamReader(diretorio);
             string linha = lerArquivo.ReadLine();
@@ -53,11 +56,12 @@ namespace Projeto3._0
                 dadosColetados = linha.Split(';');
                 nome.Add(dadosColetados[0]);
                 sobrenome.Add(dadosColetados[1]);
-                telefone.Add(dadosColetados[2]);
-                nascimento.Add(dadosColetados[3]);
-                rg.Add(dadosColetados[3]);
-                cpf.Add(dadosColetados[3]);
-                genero.Add(dadosColetados[3]);
+                senha.Add(dadosColetados[2]);
+                telefone.Add(dadosColetados[3]);
+                cpf.Add(dadosColetados[4]);
+                rg.Add(dadosColetados[5]);
+                genero.Add(dadosColetados[6]);
+                nascimento.Add(dadosColetados[7]);
                 linha = lerArquivo.ReadLine();
             }
             lerArquivo.Close();
@@ -79,22 +83,8 @@ namespace Projeto3._0
             lerArquivo.Close();
             diretorio.Close();
         }
-        public static bool Autenticação(ArrayList listaDeDados, string dados)
+        public static void GravarArquivoTurma(ArrayList codigo, ArrayList tipo, ArrayList horario, ArrayList dias)
         {
-            BancoAcademia.LerArquivoAdmin(ListaIdAdmin, ListaSenhaAdmin);
-            bool testeDeSenhas = false;
-            for (int i = 0; i < listaDeDados.Count; i++)
-            {
-                if (dados == Convert.ToString(listaDeDados[i]))
-                {
-                    testeDeSenhas = true;
-                }                
-            }
-            return testeDeSenhas;
-        }
-        public static void GravarArquivo(ArrayList codigo, ArrayList tipo, ArrayList horario, ArrayList dias)
-        {
-
             Stream diretorio = File.Open(@"E:\bdProjeto\bdTurmas.txt", FileMode.Create);
             StreamWriter writer = new StreamWriter(diretorio);
             {
@@ -106,6 +96,25 @@ namespace Projeto3._0
             writer.Close();
             diretorio.Close();
         }
+        public static void GravarArquivoProf(ArrayList nome, ArrayList sobrenome, ArrayList senha, ArrayList telefone
+            , ArrayList cpf, ArrayList rg, ArrayList genero, ArrayList nascimento)
+        {
+
+            Stream diretorio = File.Open(@"E:\bdProjeto\bdProfessores.txt", FileMode.Create);
+            StreamWriter writer = new StreamWriter(diretorio);
+            {
+                for (int i = 0; i < nome.Count; i++)
+                {
+                    writer.WriteLine("{0};{1};{2};{3};{4};{5};{6};{7}", Convert.ToString(nome[i]), Convert.ToString(sobrenome[i]),
+                        Convert.ToString(senha[i]), Convert.ToString(telefone[i]), 
+                        Convert.ToString(cpf[i]), Convert.ToString(rg[i]),
+                        Convert.ToString(genero[i]), Convert.ToString(nascimento[i]));
+                }
+            }
+            writer.Close();
+            diretorio.Close();
+        }
+
         public static void NovaTurma(ArrayList ListaCodigoTurma, ArrayList ListaTipoTurma, ArrayList ListaHorarioTurma, ArrayList ListaDiasTurma, 
             string novoCodigo, string novoTipo, string novoHorario, string novoDia)
         {
@@ -114,10 +123,40 @@ namespace Projeto3._0
             ListaHorarioTurma.Add(novoHorario);
             ListaDiasTurma.Add(novoDia);
             
-            BancoAcademia.GravarArquivo(ListaCodigoTurma, ListaTipoTurma, ListaHorarioTurma, ListaDiasTurma);
+            BancoAcademia.GravarArquivoTurma(ListaCodigoTurma, ListaTipoTurma, ListaHorarioTurma, ListaDiasTurma);
             MessageBox.Show("As aulas de " + novoTipo + " serão realizadas no(os) dia(as) de "+ novoDia +" às " + novoHorario +".", "Nova turma cadastrada", MessageBoxButtons.OK);
         }
-       
-        
+        public static void NovoProfessor(ArrayList ListaNomeProf, ArrayList ListaSobrenomeProf,
+            ArrayList ListaSenhaProf, ArrayList ListaTelefoneProf,
+            ArrayList ListaCpfProf, ArrayList ListaRgProf,
+            ArrayList ListaGeneroProf, ArrayList ListaNascimentoProf,
+            string novoNome, string novoSobrenome, string novaSenha, string novoTelefone, 
+            string novoCpf, string novoRg, string novoGenero, string novoNascimento)
+        {
+            ListaNomeProf.Add(novoNome);
+            ListaSobrenomeProf.Add(novoSobrenome);
+            ListaSenhaProf.Add(novaSenha);
+            ListaTelefoneProf.Add(novoTelefone);
+            ListaCpfProf.Add(novoCpf);
+            ListaRgProf.Add(novoRg);
+            ListaGeneroProf.Add(novoGenero);
+            ListaNascimentoProf.Add(novoNascimento);
+            BancoAcademia.GravarArquivoProf(ListaNomeProf, ListaSobrenomeProf, ListaSenhaProf, ListaTelefoneProf, ListaCpfProf, ListaRgProf, ListaGeneroProf, ListaNascimentoProf);
+            MessageBox.Show("Professor " + novoNome + novoSobrenome + " foi cadastrado com sucesso", "Novo professor", MessageBoxButtons.OK);
+        }
+
+        public static bool Autenticação(ArrayList listaDeDados, string dados)
+        {           
+            bool autenticador = false;
+            for (int i = 0; i < listaDeDados.Count; i++)
+            {
+                if (dados == Convert.ToString(listaDeDados[i]))
+                {
+                    autenticador = true;
+                    break;
+                }
+            }
+            return autenticador;
+        }
     }
 }

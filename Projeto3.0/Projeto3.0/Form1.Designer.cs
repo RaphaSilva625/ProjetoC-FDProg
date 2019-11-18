@@ -40,6 +40,10 @@
             this.novosCadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.professorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deletarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pesquisarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -150,8 +154,8 @@
             this.alunoToolStripMenuItem,
             this.professorToolStripMenuItem});
             this.novosCadastrosToolStripMenuItem.Name = "novosCadastrosToolStripMenuItem";
-            this.novosCadastrosToolStripMenuItem.Size = new System.Drawing.Size(106, 20);
-            this.novosCadastrosToolStripMenuItem.Text = "Novos cadastros";
+            this.novosCadastrosToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.novosCadastrosToolStripMenuItem.Text = "Usuários";
             // 
             // alunoToolStripMenuItem
             // 
@@ -161,9 +165,47 @@
             // 
             // professorToolStripMenuItem
             // 
+            this.professorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastroToolStripMenuItem,
+            this.editarToolStripMenuItem,
+            this.deletarToolStripMenuItem,
+            this.pesquisarToolStripMenuItem});
             this.professorToolStripMenuItem.Name = "professorToolStripMenuItem";
             this.professorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.professorToolStripMenuItem.Text = "Professor";
+            // 
+            // cadastroToolStripMenuItem
+            // 
+            this.cadastroToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cadastroToolStripMenuItem.Image")));
+            this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
+            this.cadastroToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastroToolStripMenuItem.Text = "Cadastro";
+            this.cadastroToolStripMenuItem.Click += new System.EventHandler(this.CadastroToolStripMenuItem_Click);
+            // 
+            // editarToolStripMenuItem
+            // 
+            this.editarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("editarToolStripMenuItem.Image")));
+            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            this.editarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
+            this.editarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editarToolStripMenuItem.Text = "Editar";
+            // 
+            // deletarToolStripMenuItem
+            // 
+            this.deletarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("deletarToolStripMenuItem.Image")));
+            this.deletarToolStripMenuItem.Name = "deletarToolStripMenuItem";
+            this.deletarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
+            this.deletarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deletarToolStripMenuItem.Text = "Deletar";
+            // 
+            // pesquisarToolStripMenuItem
+            // 
+            this.pesquisarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pesquisarToolStripMenuItem.Image")));
+            this.pesquisarToolStripMenuItem.Name = "pesquisarToolStripMenuItem";
+            this.pesquisarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.pesquisarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pesquisarToolStripMenuItem.Text = "Pesquisar";
             // 
             // formTurmas
             // 
@@ -203,6 +245,10 @@
         private System.Windows.Forms.ToolStripMenuItem novosCadastrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alunoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem professorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deletarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pesquisarToolStripMenuItem;
     }
 }
 

@@ -225,4 +225,40 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="cadastroToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAADlSURBVDhPxZJbDgExFIbnweUFK3BZh2A5iO2IxApcViBiLW4J9sAT/9dO05lOx5v4ki89FedM
+        e06TXzCSW/mQL3mXGzmQX6nIpTzJsWzLarpO5FkuJP+LQvJONsyuCL/vJUUKcOyjLEt2NOVFFq7DnTl2
+        yDtds0zl2oYeGsZdQ2IFupLG5qDbNRsaSAx11OXThh5O0LFhjmyioydvNvQwZ0YVEiswkysbeoaS+dPl
+        b7TkVfbNLoD5MueyIiQf5NzsIvDCKMKcGRU9obF0nWPzZZJLX6KDR8KcaRTTYeXO0WP/myT5AMPKLioF
+        h2ztAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="editarToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAACtSURBVDhP1Y87CgJBEAX7AuIJPIaBH/wb6QkEE0NPp2cxMtJQ2UQx0Ezr9e7AgujMJoIFBfMW
+        Xm+3/RVN3OEe2/pQBRWu+Cw8YDIdPOMNw4AjJtFFlafFW0PuOMYo+vMJJ57yMzKce4rwqTzzFEGrqhzW
+        DMN0RpRw88jT+yZf0ZoqDzyZ9bA8LMoWV/nT+qjy0FMCdbxgAzWkvEkSS3yghmywhZVY4wJrnn6H2QvG
+        QiYm2yRK9AAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="deletarToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAABySURBVDhPzZLRCYAwDEQ7mKA4phOqU5inDViaxkg/9MGRltwFUpp+xSIar6PLJMJbQXjLtQVh
+        PFSTQbSK5vNWQo+w1SuwjOGwcg+8Diu6L2ru7NE1oGsFKxAe4hkfh+jO3r709lwr+J6Rx8JjfuUvSOkA
+        yL0egpwzutQAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="pesquisarToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAClSURBVDhP1ZCxDcIwEEVdBgLbhI4CUbAQPVEYhRVYgSh1UgILsACCCt7n3IVzRIEQT3ryt+Wz
+        zw7fZoxbPOM9jhWOcBAVN7jHGeZx1LzGwUN0sza/Q+ulRR+1W1jsoU5OFn2uOLXYQ+s3iz4dpjo4WvRZ
+        Y+oPNhZ9VvhAbdaNkzhqfsAMXRZ4QR2iTlrUn+jjdHOyeI4qXr5mH/K7YrFDvf2vCOEJfYMgS8wK5OAA
+        AAAASUVORK5CYII=
+</value>
+  </data>
 </root>
