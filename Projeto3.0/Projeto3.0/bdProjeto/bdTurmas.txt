@@ -1,0 +1,3 @@
+001;Boxe;18h;Terça;Raphael
+002;Funcional;18h;Quinta;Raphael
+003;Corrida;18h;Quinta;09849639440

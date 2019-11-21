@@ -69,6 +69,7 @@
             this.txtSenha.Size = new System.Drawing.Size(121, 20);
             this.txtSenha.TabIndex = 5;
             this.txtSenha.Text = "Senha";
+            this.txtSenha.UseSystemPasswordChar = true;
             // 
             // btnLogin
             // 
@@ -91,9 +92,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "TelaLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TelaLogin";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.TelaLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

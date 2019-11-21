@@ -8,31 +8,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Collections;
-
 
 namespace Projeto3._0
 {
-    
-    public partial class formTurmas : Form
+    public partial class formLogin : Form
     {
-        public static ArrayList ListaCodigoTurma = new ArrayList();
-        public static ArrayList TipoTurma = new ArrayList();
-        public static ArrayList HorarioTurma = new ArrayList();
-        public static ArrayList DiasTurma = new ArrayList();
+        string[,] MatrizCategoria = new string[1, 4];
+        public int nLinhas = 0;
+        public string[] dadosColetados;
+        public void AttLista()
+        {
 
+            StreamReader sw = new StreamReader(@"D:\bdProjeto\bdTurmas.txt", true);
+            string linha;
+            while (true)
+            {
+                if (((linha = sw.ReadLine()) != null))
+                {
+                    dadosColetados = linha.Split(';');
+                    for (int lin = 0; lin < nLinhas; lin++)
+                    {
+                        for (int col = 0; col < 4; col++)
+                        {
+                            MatrizCategoria[lin, col] = dadosColetados[col];
+                        }
+
+                    }
+                }
+                else
+                    break;
+
+            }
+            sw.Close();
+        }
         private void formLogin_Load(object sender, EventArgs e)
         {
-            
+
         }
 
-        public formTurmas()
+        public formLogin()
         {
-            InitializeComponent();         
-            listView1.Columns.Add("Codigo", 50);
-            listView1.Columns.Add("Turma", 125);
-            listView1.Columns.Add("Horario", 100);
-            listView1.Columns.Add("Dias", 125);
+            InitializeComponent();
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
@@ -42,39 +58,17 @@ namespace Projeto3._0
 
         private void btnListarTurmas_Click(object sender, EventArgs e)
         {
-            BancoAcademia.LerArquivoTurma(ListaCodigoTurma, TipoTurma, HorarioTurma, DiasTurma);
-            if (ListaCodigoTurma.Count == 0)
+            string[] vet1 = new string[4];
+            for (int i = 0; i < 4; i++)
             {
-                DialogResult resposta;
-                resposta = MessageBox.Show("Não há turmas cadastradas, deseja criar uma turma nova?", "Erro", MessageBoxButtons.YesNo);
-                if (resposta == DialogResult.Yes)
-                {
-                    new CadastroTurmas().Show();
-                }
+                vet1[i] = MatrizCategoria[0, i];
             }
-            listView1.Items.Clear();
-            string[] vetorDeTeste = new string[4];
-            ListViewItem itm;
-            for (int i = 0; i < ListaCodigoTurma.Count; i++)
-            {
-                vetorDeTeste[0] = ListaCodigoTurma[i].ToString();
-                vetorDeTeste[0 + 1] = TipoTurma[i].ToString();
-                vetorDeTeste[0 + 2] = HorarioTurma[i].ToString();
-                vetorDeTeste[0 + 3] = DiasTurma[i].ToString();
-                itm = new ListViewItem(vetorDeTeste);
-                listView1.Items.Add(itm);
-            }
+            dataGridView1.DataSource = vet1[0];
         }
 
-        private void BtnCadastrarTurmas_Click(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            CadastroTurmas cadastroTurmas = new CadastroTurmas();
-            cadastroTurmas.Show();
-        }
 
-        private void CadastroToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new CadastroProfessores().Show();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Projeto3._0
 {
-    partial class formTurmas
+    partial class formLogin
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -28,23 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formTurmas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formLogin));
             this.btnEditarTurmas = new System.Windows.Forms.Button();
             this.btnListarTurmas = new System.Windows.Forms.Button();
             this.btnDeletarTurmas = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.btnCadastrarTurmas = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.novosCadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alunoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.professorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deletarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pesquisarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEditarTurmas
@@ -111,6 +105,24 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Olá, Bem vindo ao menu de turmas!";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(62, 213);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(359, 20);
+            this.textBox1.TabIndex = 15;
+            this.textBox1.Visible = false;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(427, 213);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(129, 23);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "Pesquisar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
+            // 
             // btnCadastrarTurmas
             // 
             this.btnCadastrarTurmas.BackColor = System.Drawing.SystemColors.Control;
@@ -124,109 +136,34 @@
             this.btnCadastrarTurmas.Text = "Cadastrar";
             this.btnCadastrarTurmas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCadastrarTurmas.UseVisualStyleBackColor = false;
-            this.btnCadastrarTurmas.Click += new System.EventHandler(this.BtnCadastrarTurmas_Click);
             // 
-            // listView1
+            // dataGridView1
             // 
-            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(62, 202);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(494, 111);
-            this.listView1.TabIndex = 23;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(62, 242);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(494, 147);
+            this.dataGridView1.TabIndex = 21;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.novosCadastrosToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(614, 24);
-            this.menuStrip1.TabIndex = 24;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // novosCadastrosToolStripMenuItem
-            // 
-            this.novosCadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.alunoToolStripMenuItem,
-            this.professorToolStripMenuItem});
-            this.novosCadastrosToolStripMenuItem.Name = "novosCadastrosToolStripMenuItem";
-            this.novosCadastrosToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.novosCadastrosToolStripMenuItem.Text = "Usuários";
-            // 
-            // alunoToolStripMenuItem
-            // 
-            this.alunoToolStripMenuItem.Name = "alunoToolStripMenuItem";
-            this.alunoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.alunoToolStripMenuItem.Text = "Aluno";
-            // 
-            // professorToolStripMenuItem
-            // 
-            this.professorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastroToolStripMenuItem,
-            this.editarToolStripMenuItem,
-            this.deletarToolStripMenuItem,
-            this.pesquisarToolStripMenuItem});
-            this.professorToolStripMenuItem.Name = "professorToolStripMenuItem";
-            this.professorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.professorToolStripMenuItem.Text = "Professor";
-            // 
-            // cadastroToolStripMenuItem
-            // 
-            this.cadastroToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cadastroToolStripMenuItem.Image")));
-            this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cadastroToolStripMenuItem.Text = "Cadastro";
-            this.cadastroToolStripMenuItem.Click += new System.EventHandler(this.CadastroToolStripMenuItem_Click);
-            // 
-            // editarToolStripMenuItem
-            // 
-            this.editarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("editarToolStripMenuItem.Image")));
-            this.editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            this.editarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.editarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.editarToolStripMenuItem.Text = "Editar";
-            // 
-            // deletarToolStripMenuItem
-            // 
-            this.deletarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("deletarToolStripMenuItem.Image")));
-            this.deletarToolStripMenuItem.Name = "deletarToolStripMenuItem";
-            this.deletarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.deletarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.deletarToolStripMenuItem.Text = "Deletar";
-            // 
-            // pesquisarToolStripMenuItem
-            // 
-            this.pesquisarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pesquisarToolStripMenuItem.Image")));
-            this.pesquisarToolStripMenuItem.Name = "pesquisarToolStripMenuItem";
-            this.pesquisarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.pesquisarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.pesquisarToolStripMenuItem.Text = "Pesquisar";
-            // 
-            // formTurmas
+            // formLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(614, 418);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnEditarTurmas);
             this.Controls.Add(this.btnListarTurmas);
             this.Controls.Add(this.btnDeletarTurmas);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.btnCadastrarTurmas);
-            this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "formTurmas";
+            this.Name = "formLogin";
             this.Text = "Gym Manager";
             this.Load += new System.EventHandler(this.formLogin_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,16 +176,10 @@
         private System.Windows.Forms.Button btnDeletarTurmas;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnCadastrarTurmas;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem novosCadastrosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem alunoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem professorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deletarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pesquisarToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

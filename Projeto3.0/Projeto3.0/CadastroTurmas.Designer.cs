@@ -39,6 +39,8 @@
             this.cbxDiasAula = new System.Windows.Forms.ComboBox();
             this.txtHorarioTurma = new System.Windows.Forms.TextBox();
             this.txtTipoTurma = new System.Windows.Forms.TextBox();
+            this.cbxProfTurma = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblCodTurma
@@ -81,11 +83,12 @@
             this.label5.Size = new System.Drawing.Size(187, 18);
             this.label5.TabIndex = 23;
             this.label5.Text = "Cadastro de novas turmas.";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(265, 142);
+            this.label4.Location = new System.Drawing.Point(265, 132);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 13);
             this.label4.TabIndex = 22;
@@ -94,7 +97,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 142);
+            this.label3.Location = new System.Drawing.Point(36, 132);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 13);
             this.label3.TabIndex = 21;
@@ -121,7 +124,7 @@
             // cbxDiasAula
             // 
             this.cbxDiasAula.FormattingEnabled = true;
-            this.cbxDiasAula.Location = new System.Drawing.Point(39, 161);
+            this.cbxDiasAula.Location = new System.Drawing.Point(39, 148);
             this.cbxDiasAula.Name = "cbxDiasAula";
             this.cbxDiasAula.Size = new System.Drawing.Size(121, 21);
             this.cbxDiasAula.TabIndex = 29;
@@ -136,16 +139,35 @@
             // 
             // txtTipoTurma
             // 
-            this.txtTipoTurma.Location = new System.Drawing.Point(268, 161);
+            this.txtTipoTurma.Location = new System.Drawing.Point(268, 149);
             this.txtTipoTurma.Name = "txtTipoTurma";
             this.txtTipoTurma.Size = new System.Drawing.Size(100, 20);
             this.txtTipoTurma.TabIndex = 31;
+            // 
+            // cbxProfTurma
+            // 
+            this.cbxProfTurma.FormattingEnabled = true;
+            this.cbxProfTurma.Location = new System.Drawing.Point(39, 218);
+            this.cbxProfTurma.Name = "cbxProfTurma";
+            this.cbxProfTurma.Size = new System.Drawing.Size(121, 21);
+            this.cbxProfTurma.TabIndex = 32;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(39, 199);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(51, 13);
+            this.label6.TabIndex = 33;
+            this.label6.Text = "Professor";
             // 
             // CadastroTurmas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(425, 274);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cbxProfTurma);
             this.Controls.Add(this.txtTipoTurma);
             this.Controls.Add(this.txtHorarioTurma);
             this.Controls.Add(this.cbxDiasAula);
@@ -158,6 +180,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "CadastroTurmas";
             this.Text = "CadastroTurmas";
             this.Load += new System.EventHandler(this.CadastroTurmas_Load);
@@ -178,5 +201,7 @@
         private System.Windows.Forms.ComboBox cbxDiasAula;
         private System.Windows.Forms.TextBox txtHorarioTurma;
         private System.Windows.Forms.TextBox txtTipoTurma;
+        private System.Windows.Forms.ComboBox cbxProfTurma;
+        private System.Windows.Forms.Label label6;
     }
 }

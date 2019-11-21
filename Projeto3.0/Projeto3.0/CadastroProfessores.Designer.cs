@@ -35,7 +35,6 @@
             this.lblTelefoneProf = new System.Windows.Forms.Label();
             this.mtxtNovoTelefone = new System.Windows.Forms.MaskedTextBox();
             this.lblCPFProf = new System.Windows.Forms.Label();
-            this.mtxtNovoCpf = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNovoRg = new System.Windows.Forms.TextBox();
             this.mtxtNovoData = new System.Windows.Forms.MaskedTextBox();
@@ -46,6 +45,9 @@
             this.btnCancelarProf = new System.Windows.Forms.Button();
             this.txtNovaSenha = new System.Windows.Forms.TextBox();
             this.lblSenhaProf = new System.Windows.Forms.Label();
+            this.cbxTurmasOn = new System.Windows.Forms.ComboBox();
+            this.lblCodigoTurmaProf = new System.Windows.Forms.Label();
+            this.txtNovoCpf = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtNovoNome
@@ -112,14 +114,6 @@
             this.lblCPFProf.TabIndex = 12;
             this.lblCPFProf.Text = "CPF";
             // 
-            // mtxtNovoCpf
-            // 
-            this.mtxtNovoCpf.Location = new System.Drawing.Point(40, 214);
-            this.mtxtNovoCpf.Mask = "999.999.999-99";
-            this.mtxtNovoCpf.Name = "mtxtNovoCpf";
-            this.mtxtNovoCpf.Size = new System.Drawing.Size(100, 20);
-            this.mtxtNovoCpf.TabIndex = 4;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -138,7 +132,7 @@
             // 
             // mtxtNovoData
             // 
-            this.mtxtNovoData.Location = new System.Drawing.Point(183, 291);
+            this.mtxtNovoData.Location = new System.Drawing.Point(183, 283);
             this.mtxtNovoData.Mask = "99/99/9999";
             this.mtxtNovoData.Name = "mtxtNovoData";
             this.mtxtNovoData.Size = new System.Drawing.Size(71, 20);
@@ -147,7 +141,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(180, 271);
+            this.label2.Location = new System.Drawing.Point(180, 265);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 17;
@@ -156,7 +150,7 @@
             // cbxGeneroProf
             // 
             this.cbxGeneroProf.FormattingEnabled = true;
-            this.cbxGeneroProf.Location = new System.Drawing.Point(40, 290);
+            this.cbxGeneroProf.Location = new System.Drawing.Point(40, 282);
             this.cbxGeneroProf.Name = "cbxGeneroProf";
             this.cbxGeneroProf.Size = new System.Drawing.Size(121, 21);
             this.cbxGeneroProf.TabIndex = 6;
@@ -165,7 +159,7 @@
             // lblGeneroProf
             // 
             this.lblGeneroProf.AutoSize = true;
-            this.lblGeneroProf.Location = new System.Drawing.Point(40, 271);
+            this.lblGeneroProf.Location = new System.Drawing.Point(40, 265);
             this.lblGeneroProf.Name = "lblGeneroProf";
             this.lblGeneroProf.Size = new System.Drawing.Size(42, 13);
             this.lblGeneroProf.TabIndex = 19;
@@ -173,7 +167,7 @@
             // 
             // btnSalvarProf
             // 
-            this.btnSalvarProf.Location = new System.Drawing.Point(40, 369);
+            this.btnSalvarProf.Location = new System.Drawing.Point(40, 391);
             this.btnSalvarProf.Name = "btnSalvarProf";
             this.btnSalvarProf.Size = new System.Drawing.Size(75, 23);
             this.btnSalvarProf.TabIndex = 8;
@@ -183,7 +177,7 @@
             // 
             // btnCancelarProf
             // 
-            this.btnCancelarProf.Location = new System.Drawing.Point(128, 369);
+            this.btnCancelarProf.Location = new System.Drawing.Point(128, 391);
             this.btnCancelarProf.Name = "btnCancelarProf";
             this.btnCancelarProf.Size = new System.Drawing.Size(75, 23);
             this.btnCancelarProf.TabIndex = 21;
@@ -207,11 +201,38 @@
             this.lblSenhaProf.TabIndex = 23;
             this.lblSenhaProf.Text = "Senha";
             // 
+            // cbxTurmasOn
+            // 
+            this.cbxTurmasOn.FormattingEnabled = true;
+            this.cbxTurmasOn.Location = new System.Drawing.Point(40, 343);
+            this.cbxTurmasOn.Name = "cbxTurmasOn";
+            this.cbxTurmasOn.Size = new System.Drawing.Size(121, 21);
+            this.cbxTurmasOn.TabIndex = 24;
+            // 
+            // lblCodigoTurmaProf
+            // 
+            this.lblCodigoTurmaProf.AutoSize = true;
+            this.lblCodigoTurmaProf.Location = new System.Drawing.Point(43, 327);
+            this.lblCodigoTurmaProf.Name = "lblCodigoTurmaProf";
+            this.lblCodigoTurmaProf.Size = new System.Drawing.Size(37, 13);
+            this.lblCodigoTurmaProf.TabIndex = 25;
+            this.lblCodigoTurmaProf.Text = "Turma";
+            // 
+            // txtNovoCpf
+            // 
+            this.txtNovoCpf.Location = new System.Drawing.Point(43, 213);
+            this.txtNovoCpf.Name = "txtNovoCpf";
+            this.txtNovoCpf.Size = new System.Drawing.Size(100, 20);
+            this.txtNovoCpf.TabIndex = 26;
+            // 
             // CadastroProfessores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(325, 450);
+            this.Controls.Add(this.txtNovoCpf);
+            this.Controls.Add(this.lblCodigoTurmaProf);
+            this.Controls.Add(this.cbxTurmasOn);
             this.Controls.Add(this.lblSenhaProf);
             this.Controls.Add(this.txtNovaSenha);
             this.Controls.Add(this.btnCancelarProf);
@@ -222,7 +243,6 @@
             this.Controls.Add(this.mtxtNovoData);
             this.Controls.Add(this.txtNovoRg);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.mtxtNovoCpf);
             this.Controls.Add(this.lblCPFProf);
             this.Controls.Add(this.mtxtNovoTelefone);
             this.Controls.Add(this.lblTelefoneProf);
@@ -231,6 +251,7 @@
             this.Controls.Add(this.txtNovoSobrenome);
             this.Controls.Add(this.txtNovoNome);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "CadastroProfessores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Professores";
@@ -249,7 +270,6 @@
         private System.Windows.Forms.Label lblTelefoneProf;
         private System.Windows.Forms.MaskedTextBox mtxtNovoTelefone;
         private System.Windows.Forms.Label lblCPFProf;
-        private System.Windows.Forms.MaskedTextBox mtxtNovoCpf;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNovoRg;
         private System.Windows.Forms.MaskedTextBox mtxtNovoData;
@@ -260,5 +280,8 @@
         private System.Windows.Forms.Button btnCancelarProf;
         private System.Windows.Forms.TextBox txtNovaSenha;
         private System.Windows.Forms.Label lblSenhaProf;
+        private System.Windows.Forms.ComboBox cbxTurmasOn;
+        private System.Windows.Forms.Label lblCodigoTurmaProf;
+        private System.Windows.Forms.TextBox txtNovoCpf;
     }
 }

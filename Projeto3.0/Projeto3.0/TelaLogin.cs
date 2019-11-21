@@ -24,6 +24,7 @@ namespace Projeto3._0
         public static ArrayList ListaRgProf = new ArrayList();
         public static ArrayList ListaCpfProf = new ArrayList();
         public static ArrayList ListaGeneroProf = new ArrayList();
+        public static ArrayList ListaCodigoTurmaProf = new ArrayList();
         #endregion
         //Lista de dados do Admin
         #region
@@ -31,7 +32,7 @@ namespace Projeto3._0
         public static ArrayList ListaSenhaAdmin = new ArrayList();
         #endregion
 
-        string[] loginSelecao = { "Admin", "Professor", "Aluno" };
+        string[] loginSelecao = { "Admin", "Professor" };
 
         public TelaLogin()
         {
@@ -41,7 +42,7 @@ namespace Projeto3._0
         private void TelaLogin_Load(object sender, EventArgs e)
         {
             BancoAcademia.LerArquivoAdmin(ListaIdAdmin, ListaSenhaAdmin);
-            BancoAcademia.LerArquivoProf(ListaNomeProf, ListaSobrenomeProf, ListaSenhaProf, ListaTelefoneProf, ListaNascimentoProf, ListaRgProf, ListaCpfProf, ListaGeneroProf);
+            BancoAcademia.LerArquivoProf(ListaNomeProf, ListaSobrenomeProf, ListaSenhaProf, ListaTelefoneProf, ListaNascimentoProf, ListaRgProf, ListaCpfProf, ListaGeneroProf, ListaCodigoTurmaProf);
             foreach (string item in loginSelecao)
             {
                 cbxLogin.Items.Add(item);
@@ -52,20 +53,16 @@ namespace Projeto3._0
         }
 
         private void CbxLogin_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
+        {    
             if (cbxLogin.Text != null)
             {
                 txtLogin.Enabled = true;
                 txtSenha.Enabled = true;
                 btnLogin.Enabled = true;
             }
-            
         }
-
         private void BtnLogin_Click(object sender, EventArgs e)
-        {        
-            
+        {                  
             if (cbxLogin.Text == "Admin")
             {            
                 string login = txtLogin.Text;
@@ -116,6 +113,7 @@ namespace Projeto3._0
                     txtLogin.Focus();
                 }
             }
+            // TENTATIVA DE FAZER O PROGRAMA FECHAR A ABA ANTERIOR, AO ABRIR UMA NOVA. (NÃO DEU CERTO)
             //System.Threading.Thread formTurmas = new System.Threading.Thread(new System.Threading.ThreadStart(AbrirMenu));
             //formTurmas.SetApartmentState(ApartmentState.STA);
             //formTurmas.IsBackground = true;

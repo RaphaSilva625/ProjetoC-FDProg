@@ -22,7 +22,14 @@ namespace Projeto3._0
         public static ArrayList ListaRgProf = new ArrayList();
         public static ArrayList ListaGeneroProf = new ArrayList();
         public static ArrayList ListaNascimentoProf = new ArrayList();
-        
+        public static ArrayList ListaCodigoTurmaProf = new ArrayList();
+
+        public static ArrayList ListaCodigoTurma = new ArrayList();
+        public static ArrayList ListaTipoTurma = new ArrayList();
+        public static ArrayList ListaHorarioTurma = new ArrayList();
+        public static ArrayList ListaDiasTurma = new ArrayList();
+        public static ArrayList ListaProfTurma = new ArrayList();
+
         public CadastroProfessores()
         {
             InitializeComponent();           
@@ -30,10 +37,15 @@ namespace Projeto3._0
 
         private void CadastroProfessores_Load(object sender, EventArgs e)
         {
-            BancoAcademia.LerArquivoProf(ListaNomeProf, ListaSobrenomeProf, ListaSenhaProf, ListaTelefoneProf, ListaCpfProf, ListaRgProf, ListaGeneroProf, ListaNascimentoProf);
+            BancoAcademia.LerArquivoTurma(ListaCodigoTurma, ListaTipoTurma, ListaHorarioTurma, ListaDiasTurma, ListaProfTurma);
+            BancoAcademia.LerArquivoProf(ListaNomeProf, ListaSobrenomeProf, ListaSenhaProf, ListaTelefoneProf, ListaCpfProf, ListaRgProf, ListaGeneroProf, ListaNascimentoProf, ListaCodigoTurmaProf);
             foreach (string gen in genero)
             {
                 cbxGeneroProf.Items.Add(gen);
+            }
+            foreach (var item in ListaCodigoTurma)
+            {
+                cbxTurmasOn.Items.Add(item);
             }
         }
 
@@ -48,27 +60,30 @@ namespace Projeto3._0
             string novoSobrenome = txtNovoSobrenome.Text;
             string novaSenha = txtNovaSenha.Text;
             string novoTelefone = mtxtNovoTelefone.Text;
-            string novoCpf = mtxtNovoCpf.Text;
+            string novoCpf = txtNovoCpf.Text;
             string novoRg = txtNovoRg.Text;
             string novoGenero = cbxGeneroProf.Text;
             string novoNascimento = mtxtNovoData.Text;
+            string novoCodigoTurma = cbxTurmasOn.Text;
 
             if (!BancoAcademia.Autenticação(ListaCpfProf, novoCpf))
             {
                 if (!BancoAcademia.Autenticação(ListaRgProf, novoRg))
                 {
-                    BancoAcademia.NovoProfessor(ListaNomeProf, ListaSobrenomeProf, ListaSenhaProf, ListaTelefoneProf, ListaCpfProf, ListaRgProf, ListaGeneroProf, ListaNascimentoProf, 
-                        novoNome, novoSobrenome, novaSenha, novoTelefone, novoCpf, novoRg, novoGenero, novoNascimento);
+                    BancoAcademia.NovoProfessor(ListaCpfProf, ListaNomeProf, ListaSobrenomeProf, ListaSenhaProf, ListaTelefoneProf, ListaRgProf, ListaGeneroProf, ListaNascimentoProf, ListaCodigoTurmaProf, 
+                        novoCpf, novoNome, novoSobrenome, novaSenha, novoTelefone, novoRg, novoGenero, novoNascimento, novoCodigoTurma);
                 }
                 else
                 {
                     MessageBox.Show("Já existe um usuario com este RG cadastrado. Por favor verifique o campo RG e tente novamente.", "Erro", MessageBoxButtons.OK);
+                    txtNovoRg.Focus();
                 }
                     
             }
             else
             {
                 MessageBox.Show("Já existe um usuário com este CPF cadastrado. Por favor verifique o campo CPF e tente novamente", "Erro", MessageBoxButtons.OK);
+                txtNovoCpf.Focus();
             }
 
         }

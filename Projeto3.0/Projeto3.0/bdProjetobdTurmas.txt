@@ -1,0 +1,5 @@
+001;Jump;15h;Segundas, Quartas e Sextas
+002;Boxe;18h;Terça
+003;Kick Boxing;14h;Quintas e Domingos
+005;Futsal;8h;Sextas
+001;Funcional;14h;Quarta
