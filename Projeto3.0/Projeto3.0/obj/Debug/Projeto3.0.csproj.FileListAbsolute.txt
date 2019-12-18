@@ -47,3 +47,4 @@ E:\Projeto3.0\Projeto3.0\obj\Debug\Projeto3.0.csproj.GenerateResource.cache
 E:\Projeto3.0\Projeto3.0\obj\Debug\Projeto3.0.csproj.CoreCompileInputs.cache
 E:\Projeto3.0\Projeto3.0\obj\Debug\Projeto3.0.exe
 E:\Projeto3.0\Projeto3.0\obj\Debug\Projeto3.0.pdb
+D:\Projeto3.0\Projeto3.0\obj\Debug\Projeto3._0.MenuProfessores.resources

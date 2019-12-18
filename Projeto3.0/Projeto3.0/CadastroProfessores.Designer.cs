@@ -48,6 +48,8 @@
             this.cbxTurmasOn = new System.Windows.Forms.ComboBox();
             this.lblCodigoTurmaProf = new System.Windows.Forms.Label();
             this.txtNovoCpf = new System.Windows.Forms.TextBox();
+            this.txtNomeTurma = new System.Windows.Forms.TextBox();
+            this.cckSenhaProf = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txtNovoNome
@@ -104,6 +106,7 @@
             this.mtxtNovoTelefone.Name = "mtxtNovoTelefone";
             this.mtxtNovoTelefone.Size = new System.Drawing.Size(100, 20);
             this.mtxtNovoTelefone.TabIndex = 3;
+            this.mtxtNovoTelefone.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
             // 
             // lblCPFProf
             // 
@@ -137,6 +140,7 @@
             this.mtxtNovoData.Name = "mtxtNovoData";
             this.mtxtNovoData.Size = new System.Drawing.Size(71, 20);
             this.mtxtNovoData.TabIndex = 7;
+            this.mtxtNovoData.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
             // 
             // label2
             // 
@@ -191,6 +195,7 @@
             this.txtNovaSenha.Name = "txtNovaSenha";
             this.txtNovaSenha.Size = new System.Drawing.Size(100, 20);
             this.txtNovaSenha.TabIndex = 2;
+            this.txtNovaSenha.UseSystemPasswordChar = true;
             // 
             // lblSenhaProf
             // 
@@ -207,7 +212,9 @@
             this.cbxTurmasOn.Location = new System.Drawing.Point(40, 343);
             this.cbxTurmasOn.Name = "cbxTurmasOn";
             this.cbxTurmasOn.Size = new System.Drawing.Size(121, 21);
-            this.cbxTurmasOn.TabIndex = 24;
+            this.cbxTurmasOn.TabIndex = 8;
+            this.cbxTurmasOn.Text = "[Selecione]";
+            this.cbxTurmasOn.SelectedIndexChanged += new System.EventHandler(this.CbxTurmasOn_SelectedIndexChanged);
             // 
             // lblCodigoTurmaProf
             // 
@@ -223,13 +230,32 @@
             this.txtNovoCpf.Location = new System.Drawing.Point(43, 213);
             this.txtNovoCpf.Name = "txtNovoCpf";
             this.txtNovoCpf.Size = new System.Drawing.Size(100, 20);
-            this.txtNovoCpf.TabIndex = 26;
+            this.txtNovoCpf.TabIndex = 4;
+            // 
+            // txtNomeTurma
+            // 
+            this.txtNomeTurma.Location = new System.Drawing.Point(183, 344);
+            this.txtNomeTurma.Name = "txtNomeTurma";
+            this.txtNomeTurma.Size = new System.Drawing.Size(100, 20);
+            this.txtNomeTurma.TabIndex = 9;
+            // 
+            // cckSenhaProf
+            // 
+            this.cckSenhaProf.AutoSize = true;
+            this.cckSenhaProf.Location = new System.Drawing.Point(146, 137);
+            this.cckSenhaProf.Name = "cckSenhaProf";
+            this.cckSenhaProf.Size = new System.Drawing.Size(15, 14);
+            this.cckSenhaProf.TabIndex = 26;
+            this.cckSenhaProf.UseVisualStyleBackColor = true;
+            this.cckSenhaProf.CheckedChanged += new System.EventHandler(this.cckSenhaProf_CheckedChanged);
             // 
             // CadastroProfessores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(325, 450);
+            this.Controls.Add(this.cckSenhaProf);
+            this.Controls.Add(this.txtNomeTurma);
             this.Controls.Add(this.txtNovoCpf);
             this.Controls.Add(this.lblCodigoTurmaProf);
             this.Controls.Add(this.cbxTurmasOn);
@@ -283,5 +309,7 @@
         private System.Windows.Forms.ComboBox cbxTurmasOn;
         private System.Windows.Forms.Label lblCodigoTurmaProf;
         private System.Windows.Forms.TextBox txtNovoCpf;
+        private System.Windows.Forms.TextBox txtNomeTurma;
+        private System.Windows.Forms.CheckBox cckSenhaProf;
     }
 }

@@ -33,6 +33,7 @@
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.cckSenha = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // cbxLogin
@@ -81,11 +82,23 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 
+            // cckSenha
+            // 
+            this.cckSenha.AutoSize = true;
+            this.cckSenha.Location = new System.Drawing.Point(200, 221);
+            this.cckSenha.Name = "cckSenha";
+            this.cckSenha.Size = new System.Drawing.Size(61, 17);
+            this.cckSenha.TabIndex = 8;
+            this.cckSenha.Text = "Mostrar";
+            this.cckSenha.UseVisualStyleBackColor = true;
+            this.cckSenha.CheckedChanged += new System.EventHandler(this.cckSenha_CheckedChanged);
+            // 
             // TelaLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(283, 406);
+            this.Controls.Add(this.cckSenha);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtLogin);
@@ -109,5 +122,6 @@
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.CheckBox cckSenha;
     }
 }

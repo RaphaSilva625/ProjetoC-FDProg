@@ -42,7 +42,7 @@ namespace Projeto3._0
         private void TelaLogin_Load(object sender, EventArgs e)
         {
             BancoAcademia.LerArquivoAdmin(ListaIdAdmin, ListaSenhaAdmin);
-            BancoAcademia.LerArquivoProf(ListaNomeProf, ListaSobrenomeProf, ListaSenhaProf, ListaTelefoneProf, ListaNascimentoProf, ListaRgProf, ListaCpfProf, ListaGeneroProf, ListaCodigoTurmaProf);
+            cckSenha.Enabled = false;
             foreach (string item in loginSelecao)
             {
                 cbxLogin.Items.Add(item);
@@ -60,9 +60,18 @@ namespace Projeto3._0
                 txtSenha.Enabled = true;
                 btnLogin.Enabled = true;
             }
+            if (cbxLogin.Text == "[Selecione]")
+            {
+                cckSenha.Enabled = false;
+            }
+            else
+            {
+                cckSenha.Enabled = true;
+            }
         }
         private void BtnLogin_Click(object sender, EventArgs e)
-        {                  
+        {
+            
             if (cbxLogin.Text == "Admin")
             {            
                 string login = txtLogin.Text;
@@ -90,6 +99,7 @@ namespace Projeto3._0
             }
             else if (cbxLogin.Text == "Professor")
             {
+                BancoAcademia.LerArquivoProf(ListaCpfProf, ListaNomeProf, ListaSobrenomeProf, ListaSenhaProf, ListaTelefoneProf, ListaRgProf, ListaGeneroProf, ListaNascimentoProf, ListaCodigoTurmaProf);
                 string loginProf = txtLogin.Text;
                 string senhaProf = txtSenha.Text;
                 if (BancoAcademia.Autenticação(ListaCpfProf, loginProf))
@@ -113,16 +123,18 @@ namespace Projeto3._0
                     txtLogin.Focus();
                 }
             }
-            // TENTATIVA DE FAZER O PROGRAMA FECHAR A ABA ANTERIOR, AO ABRIR UMA NOVA. (NÃO DEU CERTO)
-            //System.Threading.Thread formTurmas = new System.Threading.Thread(new System.Threading.ThreadStart(AbrirMenu));
-            //formTurmas.SetApartmentState(ApartmentState.STA);
-            //formTurmas.IsBackground = true;
-            //formTurmas.Start();
-            //this.Close();
         }
-        //public static void AbrirMenu()
-        //{
-        //    Application.Run(new formTurmas());
-        //}
+
+        private void cckSenha_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cckSenha.Checked)
+            {
+                txtSenha.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtSenha.UseSystemPasswordChar = true;
+            }
+        }
     }
 }

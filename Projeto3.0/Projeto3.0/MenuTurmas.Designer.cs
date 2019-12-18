@@ -50,9 +50,7 @@
             this.lblHorarioEdit = new System.Windows.Forms.Label();
             this.lblDiaEdit = new System.Windows.Forms.Label();
             this.btnSalvarEdit = new System.Windows.Forms.Button();
-            this.lblProfEdit = new System.Windows.Forms.Label();
             this.cbxDiaEdit = new System.Windows.Forms.ComboBox();
-            this.cbxProfTurma = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -175,6 +173,7 @@
             this.alunoToolStripMenuItem.Name = "alunoToolStripMenuItem";
             this.alunoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.alunoToolStripMenuItem.Text = "Aluno";
+            this.alunoToolStripMenuItem.Click += new System.EventHandler(this.AlunoToolStripMenuItem_Click);
             // 
             // professorToolStripMenuItem
             // 
@@ -190,7 +189,7 @@
             this.cadastroToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cadastroToolStripMenuItem.Image")));
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             this.cadastroToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
             this.cadastroToolStripMenuItem.Click += new System.EventHandler(this.CadastroToolStripMenuItem_Click);
             // 
@@ -199,7 +198,7 @@
             this.pesquisarToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pesquisarToolStripMenuItem.Image")));
             this.pesquisarToolStripMenuItem.Name = "pesquisarToolStripMenuItem";
             this.pesquisarToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.pesquisarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pesquisarToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.pesquisarToolStripMenuItem.Text = "Pesquisar";
             this.pesquisarToolStripMenuItem.Click += new System.EventHandler(this.PesquisarToolStripMenuItem_Click);
             // 
@@ -212,18 +211,18 @@
             // 
             // txtTipoEdit
             // 
-            this.txtTipoEdit.Location = new System.Drawing.Point(127, 351);
+            this.txtTipoEdit.Location = new System.Drawing.Point(150, 350);
             this.txtTipoEdit.Name = "txtTipoEdit";
-            this.txtTipoEdit.Size = new System.Drawing.Size(100, 20);
+            this.txtTipoEdit.Size = new System.Drawing.Size(117, 20);
             this.txtTipoEdit.TabIndex = 26;
             this.txtTipoEdit.Visible = false;
             this.txtTipoEdit.TextChanged += new System.EventHandler(this.TxtTipoEdit_TextChanged);
             // 
             // txtHorarioEdit
             // 
-            this.txtHorarioEdit.Location = new System.Drawing.Point(253, 351);
+            this.txtHorarioEdit.Location = new System.Drawing.Point(312, 350);
             this.txtHorarioEdit.Name = "txtHorarioEdit";
-            this.txtHorarioEdit.Size = new System.Drawing.Size(53, 20);
+            this.txtHorarioEdit.Size = new System.Drawing.Size(81, 20);
             this.txtHorarioEdit.TabIndex = 27;
             this.txtHorarioEdit.Visible = false;
             // 
@@ -239,7 +238,7 @@
             // lblTipoEdit
             // 
             this.lblTipoEdit.AutoSize = true;
-            this.lblTipoEdit.Location = new System.Drawing.Point(124, 335);
+            this.lblTipoEdit.Location = new System.Drawing.Point(147, 334);
             this.lblTipoEdit.Name = "lblTipoEdit";
             this.lblTipoEdit.Size = new System.Drawing.Size(28, 13);
             this.lblTipoEdit.TabIndex = 30;
@@ -248,7 +247,7 @@
             // lblHorarioEdit
             // 
             this.lblHorarioEdit.AutoSize = true;
-            this.lblHorarioEdit.Location = new System.Drawing.Point(250, 335);
+            this.lblHorarioEdit.Location = new System.Drawing.Point(309, 332);
             this.lblHorarioEdit.Name = "lblHorarioEdit";
             this.lblHorarioEdit.Size = new System.Drawing.Size(41, 13);
             this.lblHorarioEdit.TabIndex = 31;
@@ -257,7 +256,7 @@
             // lblDiaEdit
             // 
             this.lblDiaEdit.AutoSize = true;
-            this.lblDiaEdit.Location = new System.Drawing.Point(328, 335);
+            this.lblDiaEdit.Location = new System.Drawing.Point(420, 332);
             this.lblDiaEdit.Name = "lblDiaEdit";
             this.lblDiaEdit.Size = new System.Drawing.Size(28, 13);
             this.lblDiaEdit.TabIndex = 32;
@@ -274,32 +273,13 @@
             this.btnSalvarEdit.TextChanged += new System.EventHandler(this.TxtTipoEdit_TextChanged);
             this.btnSalvarEdit.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // lblProfEdit
-            // 
-            this.lblProfEdit.AutoSize = true;
-            this.lblProfEdit.Enabled = false;
-            this.lblProfEdit.Location = new System.Drawing.Point(451, 334);
-            this.lblProfEdit.Name = "lblProfEdit";
-            this.lblProfEdit.Size = new System.Drawing.Size(62, 13);
-            this.lblProfEdit.TabIndex = 35;
-            this.lblProfEdit.Text = "Professores";
-            this.lblProfEdit.Visible = false;
-            // 
             // cbxDiaEdit
             // 
             this.cbxDiaEdit.FormattingEnabled = true;
-            this.cbxDiaEdit.Location = new System.Drawing.Point(331, 351);
+            this.cbxDiaEdit.Location = new System.Drawing.Point(423, 350);
             this.cbxDiaEdit.Name = "cbxDiaEdit";
-            this.cbxDiaEdit.Size = new System.Drawing.Size(100, 21);
+            this.cbxDiaEdit.Size = new System.Drawing.Size(133, 21);
             this.cbxDiaEdit.TabIndex = 36;
-            // 
-            // cbxProfTurma
-            // 
-            this.cbxProfTurma.FormattingEnabled = true;
-            this.cbxProfTurma.Location = new System.Drawing.Point(454, 351);
-            this.cbxProfTurma.Name = "cbxProfTurma";
-            this.cbxProfTurma.Size = new System.Drawing.Size(102, 21);
-            this.cbxProfTurma.TabIndex = 37;
             // 
             // formTurmas
             // 
@@ -307,9 +287,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(614, 418);
-            this.Controls.Add(this.cbxProfTurma);
             this.Controls.Add(this.cbxDiaEdit);
-            this.Controls.Add(this.lblProfEdit);
             this.Controls.Add(this.btnSalvarEdit);
             this.Controls.Add(this.lblDiaEdit);
             this.Controls.Add(this.lblHorarioEdit);
@@ -330,6 +308,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "formTurmas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gym Manager";
             this.Load += new System.EventHandler(this.formLogin_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -362,9 +341,7 @@
         private System.Windows.Forms.Label lblHorarioEdit;
         private System.Windows.Forms.Label lblDiaEdit;
         private System.Windows.Forms.Button btnSalvarEdit;
-        private System.Windows.Forms.Label lblProfEdit;
         private System.Windows.Forms.ComboBox cbxDiaEdit;
-        private System.Windows.Forms.ComboBox cbxProfTurma;
     }
 }
 

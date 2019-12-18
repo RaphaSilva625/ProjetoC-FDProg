@@ -20,7 +20,6 @@ namespace Projeto3._0
         public static ArrayList ListaTipoTurma = new ArrayList();
         public static ArrayList ListaHorarioTurma = new ArrayList();
         public static ArrayList ListaDiasTurma = new ArrayList();
-        public static ArrayList ListaProfTurma = new ArrayList();
 
         public static ArrayList ListaNomeProf = new ArrayList();
         public static ArrayList ListaSobrenomeProf = new ArrayList();
@@ -56,17 +55,17 @@ namespace Projeto3._0
             lblDiaEdit.Visible = false;
             btnSalvarEdit.Enabled = false;
             btnSalvarEdit.Visible = false;
-            cbxProfTurma.Visible = false;
+            btnDeletarTurmas.Enabled = false;
+            btnEditarTurmas.Enabled = false;
         }
 
         public formTurmas()
         {
             InitializeComponent();         
-            listView1.Columns.Add("Codigo", 40);
-            listView1.Columns.Add("Tipo", 125);
-            listView1.Columns.Add("Horario", 50);
-            listView1.Columns.Add("Dias", 125);
-            listView1.Columns.Add("Professor", 125);
+            listView1.Columns.Add("Codigo", 55);
+            listView1.Columns.Add("Tipo", 135);
+            listView1.Columns.Add("Horario", 65);
+            listView1.Columns.Add("Dias", 135);
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
@@ -76,14 +75,8 @@ namespace Projeto3._0
 
         private void btnListarTurmas_Click(object sender, EventArgs e)
         {
-            BancoAcademia.LerArquivoTurma(ListaCodigoTurma, ListaTipoTurma, ListaHorarioTurma, ListaDiasTurma, ListaProfTurma);
+            BancoAcademia.LerArquivoTurma(ListaCodigoTurma, ListaTipoTurma, ListaHorarioTurma, ListaDiasTurma);          
             BancoAcademia.LerArquivoProf(ListaCpfProf, ListaNomeProf, ListaSobrenomeProf, ListaSenhaProf, ListaTelefoneProf, ListaRgProf, ListaGeneroProf, ListaDataProf, ListaCodigoTurmaProf);
-
-            foreach (var professor in ListaNomeProf)
-            {
-                cbxProfTurma.Items.Add(professor);
-            }
-
             if (ListaCodigoTurma.Count == 0)
             {
                 DialogResult resposta;
@@ -102,8 +95,6 @@ namespace Projeto3._0
                 vetorDeTeste[1] = ListaTipoTurma[i].ToString();
                 vetorDeTeste[2] = ListaHorarioTurma[i].ToString();
                 vetorDeTeste[3] = ListaDiasTurma[i].ToString();
-                vetorDeTeste[4] = ListaProfTurma[i].ToString();
-
                 itm = new ListViewItem(vetorDeTeste);
                 listView1.Items.Add(itm);
             }
@@ -126,7 +117,8 @@ namespace Projeto3._0
             txtTipoEdit.Visible = true;           
             cbxDiaEdit.Visible = true;        
             txtHorarioEdit.Visible = true;
-            cbxProfTurma.Visible = true;
+            btnDeletarTurmas.Enabled = true;
+            btnEditarTurmas.Enabled = true;
 
             for (int i = 0; i < ListaCodigoTurma.Count; i++)
             {
@@ -136,7 +128,6 @@ namespace Projeto3._0
                     txtTipoEdit.Text = ListaTipoTurma[i].ToString();
                     txtHorarioEdit.Text = ListaHorarioTurma[i].ToString();
                     cbxDiaEdit.Text = ListaDiasTurma[i].ToString();
-                    cbxProfTurma.Text = ListaProfTurma[i].ToString();
                 }
             }
         }
@@ -148,8 +139,7 @@ namespace Projeto3._0
             txtHorarioEdit.Enabled = true;
             btnSalvarEdit.Visible = true;
             btnSalvarEdit.Enabled = true;
-
-            
+        
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -161,11 +151,10 @@ namespace Projeto3._0
                     ListaTipoTurma[i] = txtTipoEdit.Text;
                     ListaHorarioTurma[i] = txtHorarioEdit.Text;
                     ListaDiasTurma[i] = cbxDiaEdit.Text;
-                    ListaProfTurma[i] = cbxProfTurma.Text;
                 }
             }
-            BancoAcademia.GravarArquivoTurma(ListaCodigoTurma, ListaTipoTurma, ListaHorarioTurma, ListaDiasTurma, ListaProfTurma);
-            MessageBox.Show("Informações atualizadas com sucesso, clique listar para detalhes.", "Dados atualizados", MessageBoxButtons.OK);
+            BancoAcademia.GravarArquivoTurma(ListaCodigoTurma, ListaTipoTurma, ListaHorarioTurma, ListaDiasTurma);
+            MessageBox.Show("Informações atualizadas com sucesso, clique listar para detalhes.", "Atenção", MessageBoxButtons.OK);
         }
 
         private void TxtTipoEdit_TextChanged(object sender, EventArgs e)
@@ -175,31 +164,47 @@ namespace Projeto3._0
 
         private void BtnDeletarTurmas_Click_1(object sender, EventArgs e)
         {
-            DialogResult resposta;
-            resposta = MessageBox.Show("Você deseja excluir a turma selecionada?", "Atenção", MessageBoxButtons.YesNo);
-            if (resposta == DialogResult.Yes)
+            if (ListaCodigoTurmaProf.Contains(txtIdEdit.Text))
             {
-                for (int i = 0; i < ListaCodigoTurma.Count; i++)
+                MessageBox.Show("A turma não pode ser deletada, favor desvincular o professor.", "Erro", MessageBoxButtons.OK);
+                return;
+            }
+            else
+            {
+                DialogResult resposta;
+                resposta = MessageBox.Show("Você deseja excluir a turma selecionada?", "Aviso", MessageBoxButtons.YesNo);
+                if (resposta == DialogResult.Yes)
                 {
-                    if (txtIdEdit.Text == ListaCodigoTurma[i].ToString())
+                    for (int j = 0; j < ListaCodigoTurma.Count; j++)
                     {
-                        ListaCodigoTurma.Remove(ListaCodigoTurma[i]);
-                        ListaTipoTurma.Remove(ListaTipoTurma[i]);
-                        ListaHorarioTurma.Remove(ListaHorarioTurma[i]);
-                        ListaDiasTurma.Remove(ListaDiasTurma[i]);
-                        ListaProfTurma.Remove(ListaProfTurma[i]);
-                        break;
+                        if (txtIdEdit.Text.ToString() == ListaCodigoTurma[j].ToString())
+                        {
+                            ListaCodigoTurma.Remove(ListaCodigoTurma[j]);
+                            ListaTipoTurma.Remove(ListaTipoTurma[j]);
+                            ListaHorarioTurma.Remove(ListaHorarioTurma[j]);
+                            ListaDiasTurma.Remove(ListaDiasTurma[j]);
+                            MessageBox.Show("Turma excluida com sucesso!!", "Aviso", MessageBoxButtons.OK);
+                            BancoAcademia.GravarArquivoTurma(ListaCodigoTurma, ListaTipoTurma, ListaHorarioTurma, ListaDiasTurma);
+                            return;
+                        }
                     }
                 }
-            }
-            MessageBox.Show("Turma excluida com sucesso!!", "Atenção", MessageBoxButtons.OK);
-            BancoAcademia.GravarArquivoTurma(ListaCodigoTurma, ListaTipoTurma, ListaHorarioTurma, ListaDiasTurma, ListaProfTurma);
+                else
+                {
+                    return;
+                }
+            }         
         }
 
         private void PesquisarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MenuProfessores professores = new MenuProfessores();
             professores.Show();
+        }
+
+        private void AlunoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Coming Soon... Don't be sad.", "Wait for it", MessageBoxButtons.OK);
         }
     }
 }

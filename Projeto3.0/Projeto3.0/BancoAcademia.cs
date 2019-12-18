@@ -23,10 +23,15 @@ namespace Projeto3._0
         public static ArrayList ListaIdAdmin = new ArrayList();
         public static ArrayList ListaSenhaAdmin = new ArrayList();
 
-        public static void LerArquivoTurma(ArrayList codigo, ArrayList tipo, ArrayList horario, ArrayList dias, ArrayList professor)
+        public static void LerArquivoTurma(ArrayList codigo, ArrayList tipo, ArrayList horario, ArrayList dias)
         {
-            codigo.Clear();tipo.Clear();horario.Clear();dias.Clear();professor.Clear();
-            Stream diretorio = File.Open(@"E:\Projeto3.0\Projeto3.0\bdProjeto\bdTurmas.txt", FileMode.Open);
+            string nomeArquivoTurma = @"D:\Projeto3.0\Projeto3.0\bdProjeto\bdTurmas.txt";
+            codigo.Clear();tipo.Clear();horario.Clear();dias.Clear();
+            if (!System.IO.File.Exists(nomeArquivoTurma))
+            {
+                System.IO.File.Create(nomeArquivoTurma).Close();
+            }
+            Stream diretorio = File.Open(nomeArquivoTurma, FileMode.Open);
             StreamReader lerArquivo = new StreamReader(diretorio);
             string linha = lerArquivo.ReadLine();
             string[] dadosColetados;
@@ -37,7 +42,6 @@ namespace Projeto3._0
                 tipo.Add(dadosColetados[1]);
                 horario.Add(dadosColetados[2]);
                 dias.Add(dadosColetados[3]);
-                professor.Add(dadosColetados[4]);
                 linha = lerArquivo.ReadLine();
             }
             lerArquivo.Close();
@@ -46,25 +50,37 @@ namespace Projeto3._0
         public static void LerArquivoProf(ArrayList cpf, ArrayList nome, ArrayList sobrenome, ArrayList senha, ArrayList telefone, ArrayList rg,
            ArrayList genero, ArrayList nascimento, ArrayList codigoTurma)
         {
+            string nomeArquivoProf = @"D:\Projeto3.0\Projeto3.0\bdProjeto\bdProfessores.txt";
             cpf.Clear();nome.Clear();sobrenome.Clear();senha.Clear();telefone.Clear();rg.Clear();genero.Clear();nascimento.Clear();codigoTurma.Clear();
-            
-            Stream diretorio = File.Open(@"E:\Projeto3.0\Projeto3.0\bdProjeto\bdProfessores.txt", FileMode.Open);
+            if (!System.IO.File.Exists(nomeArquivoProf))
+            {
+                System.IO.File.Create(nomeArquivoProf).Close();
+            }
+            Stream diretorio = File.Open(nomeArquivoProf, FileMode.Open);
             StreamReader lerArquivo = new StreamReader(diretorio);
             string linha = lerArquivo.ReadLine();
             string[] dadosColetados;
-            while (linha != null)
+            if (linha != "")
             {
-                dadosColetados = linha.Split(';');
-                cpf.Add(dadosColetados[0]);
-                nome.Add(dadosColetados[1]);
-                sobrenome.Add(dadosColetados[2]);
-                senha.Add(dadosColetados[3]);
-                telefone.Add(dadosColetados[4]);
-                rg.Add(dadosColetados[5]);
-                genero.Add(dadosColetados[6]);
-                nascimento.Add(dadosColetados[7]);
-                codigoTurma.Add(dadosColetados[8]);
-                linha = lerArquivo.ReadLine();
+                while (linha != null)
+                {
+                    dadosColetados = linha.Split(';');
+                    cpf.Add(dadosColetados[0]);
+                    nome.Add(dadosColetados[1]);
+                    sobrenome.Add(dadosColetados[2]);
+                    senha.Add(dadosColetados[3]);
+                    telefone.Add(dadosColetados[4]);
+                    rg.Add(dadosColetados[5]);
+                    genero.Add(dadosColetados[6]);
+                    nascimento.Add(dadosColetados[7]);
+                    codigoTurma.Add(dadosColetados[8]);
+                    linha = lerArquivo.ReadLine();
+                }
+                
+            }
+            else
+            {
+                return;
             }
             lerArquivo.Close();
             diretorio.Close();
@@ -72,7 +88,7 @@ namespace Projeto3._0
         public static void LerArquivoAdmin(ArrayList id, ArrayList senha)
         {
             id.Clear();senha.Clear();
-            Stream diretorio = File.Open(@"E:\Projeto3.0\Projeto3.0\bdProjeto\bdAdmin.txt", FileMode.Open);
+            Stream diretorio = File.Open(@"D:\Projeto3.0\Projeto3.0\bdProjeto\bdAdmin.txt", FileMode.Open);
             StreamReader lerArquivo = new StreamReader(diretorio);
             string linha = lerArquivo.ReadLine();
             string[] dadosColetados;
@@ -86,15 +102,15 @@ namespace Projeto3._0
             lerArquivo.Close();
             diretorio.Close();
         }
-        public static void GravarArquivoTurma(ArrayList codigo, ArrayList tipo, ArrayList horario, ArrayList dias, ArrayList professor)
+        public static void GravarArquivoTurma(ArrayList codigo, ArrayList tipo, ArrayList horario, ArrayList dias)
         {
-            Stream diretorio = File.Open(@"E:\Projeto3.0\Projeto3.0\bdProjeto\bdTurmas.txt", FileMode.Create);
+            Stream diretorio = File.Open(@"D:\Projeto3.0\Projeto3.0\bdProjeto\bdTurmas.txt", FileMode.Create);
             StreamWriter writer = new StreamWriter(diretorio);
             {
                 for (int i = 0; i < codigo.Count; i++)
                 {
-                    writer.WriteLine("{0};{1};{2};{3};{4}", Convert.ToString(codigo[i]),  Convert.ToString(tipo[i]),
-                        Convert.ToString(horario[i]), Convert.ToString(dias[i]), Convert.ToString(professor[i]));
+                    writer.WriteLine("{0};{1};{2};{3}", Convert.ToString(codigo[i]),  Convert.ToString(tipo[i]),
+                        Convert.ToString(horario[i]), Convert.ToString(dias[i]));
                 }          
             }
             writer.Close();
@@ -103,8 +119,7 @@ namespace Projeto3._0
         public static void GravarArquivoProf(ArrayList cpf, ArrayList nome, ArrayList sobrenome, ArrayList senha
             , ArrayList telefone, ArrayList rg, ArrayList genero, ArrayList nascimento, ArrayList codigoTurma)
         {
-
-            Stream diretorio = File.Open(@"E:\Projeto3.0\Projeto3.0\bdProjeto\bdProfessores.txt", FileMode.Create);
+            Stream diretorio = File.Open(@"D:\Projeto3.0\Projeto3.0\bdProjeto\bdProfessores.txt", FileMode.Create);
             StreamWriter writer = new StreamWriter(diretorio);
             {
                 for (int i = 0; i < nome.Count; i++)
@@ -119,54 +134,37 @@ namespace Projeto3._0
             diretorio.Close();
         }
 
-        public static void NovaTurma(ArrayList ListaCodigoTurma, ArrayList ListaTipoTurma, ArrayList ListaHorarioTurma, ArrayList ListaDiasTurma, ArrayList ListaProfTurma, 
-            string novoCodigo, string novoTipo, string novoHorario, string novoDia, string novoProf)
+        public static void NovaTurma(ArrayList ListaCodigoTurma, ArrayList ListaTipoTurma, ArrayList ListaHorarioTurma, ArrayList ListaDiasTurma, 
+            string novoCodigo, string novoTipo, string novoHorario, string novoDia)
         {
             ListaCodigoTurma.Add(novoCodigo);
             ListaTipoTurma.Add(novoTipo);
             ListaHorarioTurma.Add(novoHorario);
             ListaDiasTurma.Add(novoDia);
-            ListaProfTurma.Add(novoProf);
             
-            BancoAcademia.GravarArquivoTurma(ListaCodigoTurma, ListaTipoTurma, ListaHorarioTurma, ListaDiasTurma, ListaProfTurma);
+            BancoAcademia.GravarArquivoTurma(ListaCodigoTurma, ListaTipoTurma, ListaHorarioTurma, ListaDiasTurma);
             MessageBox.Show("As aulas de " + novoTipo + " serão realizadas no(os) dia(as) de "+ novoDia +" às " + novoHorario +".", "Nova turma cadastrada", MessageBoxButtons.OK);
         }
-        public static void NovoProfessor(ArrayList ListaNomeProf, ArrayList ListaSobrenomeProf,
-            ArrayList ListaSenhaProf, ArrayList ListaTelefoneProf,
-            ArrayList ListaCpfProf, ArrayList ListaRgProf,
+        public static void NovoProfessor(ArrayList ListaCpfProf, ArrayList ListaNomeProf,
+            ArrayList ListaSobrenomeProf, ArrayList ListaSenhaProf,
+            ArrayList ListaTelefoneProf, ArrayList ListaRgProf,
             ArrayList ListaGeneroProf, ArrayList ListaNascimentoProf, ArrayList ListaCodigoTurmaProf, 
-            string novoNome, string novoSobrenome, string novaSenha, string novoTelefone, 
-            string novoCpf, string novoRg, string novoGenero, string novoNascimento, string novoCodigoTurma)
+            string novoCpf, string novoNome, string novoSobrenome, string novaSenha, 
+            string novoTelefone, string novoRg, string novoGenero, string novoNascimento, string novoCodigoTurma)
         {
+            ListaCpfProf.Add(novoCpf);
             ListaNomeProf.Add(novoNome);
             ListaSobrenomeProf.Add(novoSobrenome);
             ListaSenhaProf.Add(novaSenha);
             ListaTelefoneProf.Add(novoTelefone);
-            ListaCpfProf.Add(novoCpf);
             ListaRgProf.Add(novoRg);
             ListaGeneroProf.Add(novoGenero);
             ListaNascimentoProf.Add(novoNascimento);
             ListaCodigoTurmaProf.Add(novoCodigoTurma);
-            BancoAcademia.GravarArquivoProf(ListaNomeProf, ListaSobrenomeProf, ListaSenhaProf, ListaTelefoneProf, ListaCpfProf, ListaRgProf, ListaGeneroProf, ListaNascimentoProf, ListaCodigoTurmaProf);
-            MessageBox.Show("Professor " + novoNome + novoSobrenome + " foi cadastrado com sucesso", "Novo professor", MessageBoxButtons.OK);
+            BancoAcademia.GravarArquivoProf(ListaCpfProf, ListaNomeProf, ListaSobrenomeProf, ListaSenhaProf, ListaTelefoneProf, ListaRgProf, ListaGeneroProf, ListaNascimentoProf, ListaCodigoTurmaProf);
+            MessageBox.Show("Professor(a) " + novoNome + " " + novoSobrenome + " foi cadastrado(a) com sucesso!", "Novo cadastro", MessageBoxButtons.OK);
         }
 
-        //public static void BubbleSort(ArrayList ListaCodigoTurma)
-        //{
-        //    int[] vetor = (int[])ListaCodigoTurma.ToArray(typeof(int));
-        //    for (int i = vetor.Length - 1; i >= 1; i--)
-        //    { 
-        //        for (int j = 0; j < i; j++)
-        //        {
-        //            if (vetor[j] > vetor[j + 1])
-        //            {
-        //                int aux = vetor[j];
-        //                vetor[j] = vetor[j + 1];
-        //                vetor[j + 1] = aux;
-        //            }
-        //        }
-        //    }
-        //}
         public static bool Autenticação(ArrayList listaDeDados, string dados)
         {           
             bool autenticador = false;
@@ -179,6 +177,6 @@ namespace Projeto3._0
                 }
             }
             return autenticador;
-        }
+        }       
     }
 }

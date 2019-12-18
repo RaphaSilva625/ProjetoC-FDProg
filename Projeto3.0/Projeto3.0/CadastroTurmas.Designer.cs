@@ -36,22 +36,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbxDiasAula = new System.Windows.Forms.ComboBox();
-            this.txtHorarioTurma = new System.Windows.Forms.TextBox();
             this.txtTipoTurma = new System.Windows.Forms.TextBox();
-            this.cbxProfTurma = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.btnCancelarTurma = new System.Windows.Forms.Button();
+            this.mtxtHorarioTurma = new System.Windows.Forms.MaskedTextBox();
+            this.cckListDias = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // lblCodTurma
             // 
             this.lblCodTurma.AutoSize = true;
             this.lblCodTurma.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodTurma.Location = new System.Drawing.Point(146, 87);
+            this.lblCodTurma.Location = new System.Drawing.Point(145, 89);
             this.lblCodTurma.Name = "lblCodTurma";
-            this.lblCodTurma.Size = new System.Drawing.Size(46, 17);
+            this.lblCodTurma.Size = new System.Drawing.Size(0, 17);
             this.lblCodTurma.TabIndex = 27;
-            this.lblCodTurma.Text = "label6";
             this.lblCodTurma.Visible = false;
             // 
             // btnCodTurma
@@ -59,17 +57,17 @@
             this.btnCodTurma.Location = new System.Drawing.Point(39, 87);
             this.btnCodTurma.Name = "btnCodTurma";
             this.btnCodTurma.Size = new System.Drawing.Size(96, 23);
-            this.btnCodTurma.TabIndex = 26;
+            this.btnCodTurma.TabIndex = 0;
             this.btnCodTurma.Text = "Gerar Código";
             this.btnCodTurma.UseVisualStyleBackColor = true;
             this.btnCodTurma.Click += new System.EventHandler(this.BtnCodTurma_Click);
             // 
             // btbSaveTurma
             // 
-            this.btbSaveTurma.Location = new System.Drawing.Point(293, 218);
+            this.btbSaveTurma.Location = new System.Drawing.Point(327, 164);
             this.btbSaveTurma.Name = "btbSaveTurma";
-            this.btbSaveTurma.Size = new System.Drawing.Size(75, 23);
-            this.btbSaveTurma.TabIndex = 24;
+            this.btbSaveTurma.Size = new System.Drawing.Size(75, 75);
+            this.btbSaveTurma.TabIndex = 4;
             this.btbSaveTurma.Text = "Salvar";
             this.btbSaveTurma.UseVisualStyleBackColor = true;
             this.btbSaveTurma.Click += new System.EventHandler(this.BtbSaveTurma_Click);
@@ -88,7 +86,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(265, 132);
+            this.label4.Location = new System.Drawing.Point(36, 148);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 13);
             this.label4.TabIndex = 22;
@@ -97,7 +95,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 132);
+            this.label3.Location = new System.Drawing.Point(180, 138);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 13);
             this.label3.TabIndex = 21;
@@ -106,7 +104,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(265, 71);
+            this.label2.Location = new System.Drawing.Point(180, 73);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 20;
@@ -121,56 +119,48 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Categoria da turma:";
             // 
-            // cbxDiasAula
-            // 
-            this.cbxDiasAula.FormattingEnabled = true;
-            this.cbxDiasAula.Location = new System.Drawing.Point(39, 148);
-            this.cbxDiasAula.Name = "cbxDiasAula";
-            this.cbxDiasAula.Size = new System.Drawing.Size(121, 21);
-            this.cbxDiasAula.TabIndex = 29;
-            this.cbxDiasAula.Text = "[Selecione]";
-            // 
-            // txtHorarioTurma
-            // 
-            this.txtHorarioTurma.Location = new System.Drawing.Point(268, 86);
-            this.txtHorarioTurma.Name = "txtHorarioTurma";
-            this.txtHorarioTurma.Size = new System.Drawing.Size(100, 20);
-            this.txtHorarioTurma.TabIndex = 30;
-            // 
             // txtTipoTurma
             // 
-            this.txtTipoTurma.Location = new System.Drawing.Point(268, 149);
+            this.txtTipoTurma.Location = new System.Drawing.Point(39, 164);
             this.txtTipoTurma.Name = "txtTipoTurma";
             this.txtTipoTurma.Size = new System.Drawing.Size(100, 20);
-            this.txtTipoTurma.TabIndex = 31;
+            this.txtTipoTurma.TabIndex = 2;
             // 
-            // cbxProfTurma
+            // btnCancelarTurma
             // 
-            this.cbxProfTurma.FormattingEnabled = true;
-            this.cbxProfTurma.Location = new System.Drawing.Point(39, 218);
-            this.cbxProfTurma.Name = "cbxProfTurma";
-            this.cbxProfTurma.Size = new System.Drawing.Size(121, 21);
-            this.cbxProfTurma.TabIndex = 32;
+            this.btnCancelarTurma.Location = new System.Drawing.Point(327, 76);
+            this.btnCancelarTurma.Name = "btnCancelarTurma";
+            this.btnCancelarTurma.Size = new System.Drawing.Size(75, 75);
+            this.btnCancelarTurma.TabIndex = 34;
+            this.btnCancelarTurma.Text = "Cancelar";
+            this.btnCancelarTurma.UseVisualStyleBackColor = true;
+            this.btnCancelarTurma.Click += new System.EventHandler(this.BtnCancelarTurma_Click);
             // 
-            // label6
+            // mtxtHorarioTurma
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(39, 199);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 13);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "Professor";
+            this.mtxtHorarioTurma.Location = new System.Drawing.Point(183, 90);
+            this.mtxtHorarioTurma.Mask = "00:00";
+            this.mtxtHorarioTurma.Name = "mtxtHorarioTurma";
+            this.mtxtHorarioTurma.Size = new System.Drawing.Size(100, 20);
+            this.mtxtHorarioTurma.TabIndex = 1;
+            // 
+            // cckListDias
+            // 
+            this.cckListDias.FormattingEnabled = true;
+            this.cckListDias.Location = new System.Drawing.Point(183, 154);
+            this.cckListDias.Name = "cckListDias";
+            this.cckListDias.Size = new System.Drawing.Size(120, 94);
+            this.cckListDias.TabIndex = 3;
             // 
             // CadastroTurmas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(425, 274);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.cbxProfTurma);
+            this.Controls.Add(this.cckListDias);
+            this.Controls.Add(this.mtxtHorarioTurma);
+            this.Controls.Add(this.btnCancelarTurma);
             this.Controls.Add(this.txtTipoTurma);
-            this.Controls.Add(this.txtHorarioTurma);
-            this.Controls.Add(this.cbxDiasAula);
             this.Controls.Add(this.lblCodTurma);
             this.Controls.Add(this.btnCodTurma);
             this.Controls.Add(this.btbSaveTurma);
@@ -198,10 +188,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbxDiasAula;
-        private System.Windows.Forms.TextBox txtHorarioTurma;
         private System.Windows.Forms.TextBox txtTipoTurma;
-        private System.Windows.Forms.ComboBox cbxProfTurma;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnCancelarTurma;
+        private System.Windows.Forms.MaskedTextBox mtxtHorarioTurma;
+        private System.Windows.Forms.CheckedListBox cckListDias;
     }
 }

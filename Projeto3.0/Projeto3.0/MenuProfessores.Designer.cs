@@ -35,11 +35,8 @@
             this.txtNomeProf = new System.Windows.Forms.TextBox();
             this.txtSobrenomeProf = new System.Windows.Forms.TextBox();
             this.txtSenhaProf = new System.Windows.Forms.TextBox();
-            this.txtTelefoneProf = new System.Windows.Forms.TextBox();
             this.txtCpfProf = new System.Windows.Forms.TextBox();
             this.txtRgProf = new System.Windows.Forms.TextBox();
-            this.txtGeneroProf = new System.Windows.Forms.TextBox();
-            this.txtDataProf = new System.Windows.Forms.TextBox();
             this.lblNomeProf = new System.Windows.Forms.Label();
             this.lblSobrenomeProf = new System.Windows.Forms.Label();
             this.lblSenhaProf = new System.Windows.Forms.Label();
@@ -51,6 +48,10 @@
             this.btnSalvarEditProf = new System.Windows.Forms.Button();
             this.cbxCodigoTurma = new System.Windows.Forms.ComboBox();
             this.lblTurmaProf = new System.Windows.Forms.Label();
+            this.cckSenhaProf = new System.Windows.Forms.CheckBox();
+            this.cbxGeneroProf = new System.Windows.Forms.ComboBox();
+            this.mtxtTelefoneProf = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtDataProf = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // lvProf
@@ -62,6 +63,7 @@
             this.lvProf.TabIndex = 0;
             this.lvProf.UseCompatibleStateImageBehavior = false;
             this.lvProf.View = System.Windows.Forms.View.Details;
+            this.lvProf.SelectedIndexChanged += new System.EventHandler(this.LvProf_SelectedIndexChanged);
             // 
             // btnEditProf
             // 
@@ -71,6 +73,7 @@
             this.btnEditProf.TabIndex = 1;
             this.btnEditProf.Text = "Editar";
             this.btnEditProf.UseVisualStyleBackColor = true;
+            this.btnEditProf.Click += new System.EventHandler(this.BtnEditProf_Click);
             // 
             // btnDeleteProf
             // 
@@ -80,6 +83,7 @@
             this.btnDeleteProf.TabIndex = 2;
             this.btnDeleteProf.Text = "Deletar";
             this.btnDeleteProf.UseVisualStyleBackColor = true;
+            this.btnDeleteProf.Click += new System.EventHandler(this.BtnDeleteProf_Click);
             // 
             // btnListarProf
             // 
@@ -96,28 +100,22 @@
             this.txtNomeProf.Location = new System.Drawing.Point(47, 282);
             this.txtNomeProf.Name = "txtNomeProf";
             this.txtNomeProf.Size = new System.Drawing.Size(100, 20);
-            this.txtNomeProf.TabIndex = 4;
+            this.txtNomeProf.TabIndex = 0;
             // 
             // txtSobrenomeProf
             // 
             this.txtSobrenomeProf.Location = new System.Drawing.Point(167, 282);
             this.txtSobrenomeProf.Name = "txtSobrenomeProf";
             this.txtSobrenomeProf.Size = new System.Drawing.Size(100, 20);
-            this.txtSobrenomeProf.TabIndex = 5;
+            this.txtSobrenomeProf.TabIndex = 1;
             // 
             // txtSenhaProf
             // 
             this.txtSenhaProf.Location = new System.Drawing.Point(287, 282);
             this.txtSenhaProf.Name = "txtSenhaProf";
             this.txtSenhaProf.Size = new System.Drawing.Size(100, 20);
-            this.txtSenhaProf.TabIndex = 6;
-            // 
-            // txtTelefoneProf
-            // 
-            this.txtTelefoneProf.Location = new System.Drawing.Point(406, 282);
-            this.txtTelefoneProf.Name = "txtTelefoneProf";
-            this.txtTelefoneProf.Size = new System.Drawing.Size(139, 20);
-            this.txtTelefoneProf.TabIndex = 7;
+            this.txtSenhaProf.TabIndex = 2;
+            this.txtSenhaProf.UseSystemPasswordChar = true;
             // 
             // txtCpfProf
             // 
@@ -132,20 +130,6 @@
             this.txtRgProf.Name = "txtRgProf";
             this.txtRgProf.Size = new System.Drawing.Size(142, 20);
             this.txtRgProf.TabIndex = 9;
-            // 
-            // txtGeneroProf
-            // 
-            this.txtGeneroProf.Location = new System.Drawing.Point(388, 327);
-            this.txtGeneroProf.Name = "txtGeneroProf";
-            this.txtGeneroProf.Size = new System.Drawing.Size(100, 20);
-            this.txtGeneroProf.TabIndex = 10;
-            // 
-            // txtDataProf
-            // 
-            this.txtDataProf.Location = new System.Drawing.Point(517, 327);
-            this.txtDataProf.Name = "txtDataProf";
-            this.txtDataProf.Size = new System.Drawing.Size(100, 20);
-            this.txtDataProf.TabIndex = 11;
             // 
             // lblNomeProf
             // 
@@ -224,9 +208,10 @@
             this.btnSalvarEditProf.Location = new System.Drawing.Point(47, 354);
             this.btnSalvarEditProf.Name = "btnSalvarEditProf";
             this.btnSalvarEditProf.Size = new System.Drawing.Size(570, 23);
-            this.btnSalvarEditProf.TabIndex = 20;
+            this.btnSalvarEditProf.TabIndex = 7;
             this.btnSalvarEditProf.Text = "Salvar alterações";
             this.btnSalvarEditProf.UseVisualStyleBackColor = true;
+            this.btnSalvarEditProf.Click += new System.EventHandler(this.BtnSalvarEditProf_Click);
             // 
             // cbxCodigoTurma
             // 
@@ -234,7 +219,7 @@
             this.cbxCodigoTurma.Location = new System.Drawing.Point(567, 282);
             this.cbxCodigoTurma.Name = "cbxCodigoTurma";
             this.cbxCodigoTurma.Size = new System.Drawing.Size(50, 21);
-            this.cbxCodigoTurma.TabIndex = 21;
+            this.cbxCodigoTurma.TabIndex = 4;
             // 
             // lblTurmaProf
             // 
@@ -245,11 +230,51 @@
             this.lblTurmaProf.TabIndex = 22;
             this.lblTurmaProf.Text = "Turma";
             // 
+            // cckSenhaProf
+            // 
+            this.cckSenhaProf.AutoSize = true;
+            this.cckSenhaProf.Location = new System.Drawing.Point(372, 266);
+            this.cckSenhaProf.Name = "cckSenhaProf";
+            this.cckSenhaProf.Size = new System.Drawing.Size(15, 14);
+            this.cckSenhaProf.TabIndex = 23;
+            this.cckSenhaProf.UseVisualStyleBackColor = true;
+            this.cckSenhaProf.CheckedChanged += new System.EventHandler(this.CckSenhaProf_CheckedChanged);
+            // 
+            // cbxGeneroProf
+            // 
+            this.cbxGeneroProf.FormattingEnabled = true;
+            this.cbxGeneroProf.Location = new System.Drawing.Point(388, 326);
+            this.cbxGeneroProf.Name = "cbxGeneroProf";
+            this.cbxGeneroProf.Size = new System.Drawing.Size(121, 21);
+            this.cbxGeneroProf.TabIndex = 5;
+            // 
+            // mtxtTelefoneProf
+            // 
+            this.mtxtTelefoneProf.Location = new System.Drawing.Point(406, 282);
+            this.mtxtTelefoneProf.Mask = "(00)00000-0000";
+            this.mtxtTelefoneProf.Name = "mtxtTelefoneProf";
+            this.mtxtTelefoneProf.Size = new System.Drawing.Size(100, 20);
+            this.mtxtTelefoneProf.TabIndex = 24;
+            this.mtxtTelefoneProf.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            // 
+            // mtxtDataProf
+            // 
+            this.mtxtDataProf.Location = new System.Drawing.Point(517, 328);
+            this.mtxtDataProf.Mask = "00/00/0000";
+            this.mtxtDataProf.Name = "mtxtDataProf";
+            this.mtxtDataProf.Size = new System.Drawing.Size(100, 20);
+            this.mtxtDataProf.TabIndex = 25;
+            this.mtxtDataProf.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt;
+            // 
             // MenuProfessores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(668, 413);
+            this.Controls.Add(this.mtxtDataProf);
+            this.Controls.Add(this.mtxtTelefoneProf);
+            this.Controls.Add(this.cbxGeneroProf);
+            this.Controls.Add(this.cckSenhaProf);
             this.Controls.Add(this.lblTurmaProf);
             this.Controls.Add(this.cbxCodigoTurma);
             this.Controls.Add(this.btnSalvarEditProf);
@@ -261,11 +286,8 @@
             this.Controls.Add(this.lblSenhaProf);
             this.Controls.Add(this.lblSobrenomeProf);
             this.Controls.Add(this.lblNomeProf);
-            this.Controls.Add(this.txtDataProf);
-            this.Controls.Add(this.txtGeneroProf);
             this.Controls.Add(this.txtRgProf);
             this.Controls.Add(this.txtCpfProf);
-            this.Controls.Add(this.txtTelefoneProf);
             this.Controls.Add(this.txtSenhaProf);
             this.Controls.Add(this.txtSobrenomeProf);
             this.Controls.Add(this.txtNomeProf);
@@ -273,8 +295,10 @@
             this.Controls.Add(this.btnDeleteProf);
             this.Controls.Add(this.btnEditProf);
             this.Controls.Add(this.lvProf);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MenuProfessores";
-            this.Text = "MenuProfessores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Menu de Professores";
             this.Load += new System.EventHandler(this.MenuProfessores_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -290,11 +314,8 @@
         private System.Windows.Forms.TextBox txtNomeProf;
         private System.Windows.Forms.TextBox txtSobrenomeProf;
         private System.Windows.Forms.TextBox txtSenhaProf;
-        private System.Windows.Forms.TextBox txtTelefoneProf;
         private System.Windows.Forms.TextBox txtCpfProf;
         private System.Windows.Forms.TextBox txtRgProf;
-        private System.Windows.Forms.TextBox txtGeneroProf;
-        private System.Windows.Forms.TextBox txtDataProf;
         private System.Windows.Forms.Label lblNomeProf;
         private System.Windows.Forms.Label lblSobrenomeProf;
         private System.Windows.Forms.Label lblSenhaProf;
@@ -306,5 +327,9 @@
         private System.Windows.Forms.Button btnSalvarEditProf;
         private System.Windows.Forms.ComboBox cbxCodigoTurma;
         private System.Windows.Forms.Label lblTurmaProf;
+        private System.Windows.Forms.CheckBox cckSenhaProf;
+        private System.Windows.Forms.ComboBox cbxGeneroProf;
+        private System.Windows.Forms.MaskedTextBox mtxtTelefoneProf;
+        private System.Windows.Forms.MaskedTextBox mtxtDataProf;
     }
 }
